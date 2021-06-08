@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<h1>Edit goods</h1>
+<form action="tool.php" method="post" class="form-horizontal" role="form">
+	<div class="form-group">
+		<label class="col-md-2 control-label">Product name:</label>
+		<div class="col-md-10">
+			<input type="text" class="form-control" name="goods_title" id="goods_title" placeholder="please enter good's name" value="">
+		</div>
+	</div>
+
+	<div class="form-group">
+		<label class="col-md-2 control-label">Product content:</label>
+		<div class="col-md-10">
+			<textarea class="form-control" name="goods_content" id="goods_content" placeholder="please enter good's content"></textarea>
+		</div>
+	</div>
+
+	<div class="form-group">
+		<label class="col-md-2 control-label">Product price:</label>
+		<div class="col-md-10">
+			<input type="text" class="form-control" name="goods_price" id="goods_price" placeholder="please enter good's price" value="">
+		</div>
+	</div>
+
+	<div class="form-group">
+		<div class="col-md-offset-2 col-md-10">
+			<input type="hidden" name="op" value="insert_goods">
+			<!--一個op的隱藏表單,是為了把東西導向正確網頁-->
+			<br>
+			<button type="submit" class="btn btn-outline-dark">Save goods</button>
+		</div>
+	</div>
+</form>

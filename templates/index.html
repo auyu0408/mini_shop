@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatable" content="IE=edge">
+		<!--上面主要是IE在用啦，但IE都要掰掰了-->
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>{$shop_name}</title>
+		<link href="vendor/twbs/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+		<script src="vendor/twbs/bootstrap/dist/js/bootstrap.min.js"></script>
+		<link href="style.css" rel="stylesheet">
+	</head>
+	<body>
+		<div class="container">
+			<div id="shop_head">
+				<a herf="index.php">
+					<img src="image/title.jpg" alt="{$shop_name}" class="img-responsive"><img src="image/title_sm.jpg" width="300" alt="little 3boshi" class="img-responsive">
+<!--img-responsive自適應功能，alt無障礙網頁，沒有圖片時也有文字說明，兩個中間沒換行可以並排，然後利用限制圖片寬度或高度來縮小圖片，讓他在比例內-->
+				</a>
+			</div>
+			<div id="shop_main" class="row">
+				<div class="col-9">
+					{if $op=="goods_form"}
+						{include file ="goods_form.html"}
+					{else}
+						{$content}
+					{/if}
+				</div>
+				<div class="col-3">{include file='index_side.html'}</div>
+			</div>
+			<div id="shop_foot" class="text-cent">
+				<div>Address: 日本〒167-0053 Tokyo, Suginami City, Nishiogiminami, 2 Chome-11-5</div>
+				<div>Phone:+81 3-2021-0211</div>
+				<div>copyright &#169 2021 3bosui_youshudo.net All right reserved.</div>
+<!--&#169是版權符號-->
+			</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,25 @@
+body{
+	background-color: rgb(169, 99, 96);
+	font-family:Tlwg Mono;
+}
+.container
+{
+	background-color: white;
+}
+#shop_head
+{
+	margin-bottom: 15px;
+}
+#shop_main
+{
+	margin-bottom: 200px;
+	line-height: 1.5;
+}
+#shop_foot
+{
+	background-color: rgb(186,145,50);
+	color: #fff;
+	padding: 30px;
+	line-height: 1.8;
+	margin: 15px 0px;
+}
