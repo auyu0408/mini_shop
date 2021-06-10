@@ -1,24 +1,24 @@
 <?php return array (
   'root' => 
   array (
-    'pretty_version' => '1.0.0+no-version-set',
-    'version' => '1.0.0.0',
+    'pretty_version' => 'dev-main',
+    'version' => 'dev-main',
     'aliases' => 
     array (
     ),
-    'reference' => NULL,
+    'reference' => '739a0b229f039c0de5b95fa1138959ef2d16adca',
     'name' => '__root__',
   ),
   'versions' => 
   array (
     '__root__' => 
     array (
-      'pretty_version' => '1.0.0+no-version-set',
-      'version' => '1.0.0.0',
+      'pretty_version' => 'dev-main',
+      'version' => 'dev-main',
       'aliases' => 
       array (
       ),
-      'reference' => NULL,
+      'reference' => '739a0b229f039c0de5b95fa1138959ef2d16adca',
     ),
     'twbs/bootstrap' => 
     array (
@@ -35,6 +35,15 @@
       array (
         0 => 'v5.0.1',
       ),
+    ),
+    'verot/class.upload.php' => 
+    array (
+      'pretty_version' => '2.1.0',
+      'version' => '2.1.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '4d9aae875245948d21e42ade332fb45f897f28bb',
     ),
   ),
 );

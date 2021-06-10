@@ -1,5 +1,6 @@
 {
     "require": {
-        "twbs/bootstrap": "^5.0"
+        "twbs/bootstrap": "^5.0",
+        "verot/class.upload.php": "^2.1"
     }
 }
