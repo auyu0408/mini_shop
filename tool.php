@@ -34,7 +34,6 @@ function inset_goods(){
 	$goods_price = $mysqli->real_escape_string($_POST['goods_price']);
 	$goods_date = date("Y-m-d H:i:s");
 
-	echo "$goods_title,$goods_content,$goods_price,$goods_date";
 
 	$sql = "INSERT INTO goods(goods_title,goods_content,goods_price,goods_counter,goods_date) VALUES('{$goods_title}','{$goods_content}','{$goods_price}','0','{$goods_date}')";
 	$mysqli->query($sql) or die($mysqli->counter_error);
