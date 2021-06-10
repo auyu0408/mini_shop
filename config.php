@@ -2,7 +2,7 @@
 define('_SHOP_NAME', 'MITSUBOSHI YOUSHUDOU');
 define('_DB_HOST', 'localhost');
 define('_DB_ID', 'ubuntu');
-define('_DB_PW', 'Magicalwm0408');
+define('_DB_PW', 'Gurame5150');
 define('_DB_NAME', 'mini_shop');
 
 $admin_array = ['auyu'];

@@ -32,10 +32,11 @@ function inset_goods(){
 	$goods_title = $mysqli->real_escape_string($_POST['goods_title']);
 	$goods_content = $mysqli->real_escape_string($_POST['goods_content']);
 	$goods_price = $mysqli->real_escape_string($_POST['goods_price']);
-	$goods_date = $mysqli->now();
+	$goods_date = date("Y-m-d H:i:s");
 
-	$sql = "INSERT INTO goods(goods_title, goods_content, goods_price, goods_counter, goods_date) 
-		VALUES('{$goods_title}','{$goods_content}','{$goods_price}',0,'{$goods_date}')";
+	echo "$goods_title,$goods_content,$goods_price,$goods_date";
+
+	$sql = "INSERT INTO goods(goods_title,goods_content,goods_price,goods_counter,goods_date) VALUES('{$goods_title}','{$goods_content}','{$goods_price}','0','{$goods_date}')";
 	$mysqli->query($sql) or die($mysqli->counter_error);
 	$goods_sn = $mysqli->insert_id;
 	return $goods_sn;

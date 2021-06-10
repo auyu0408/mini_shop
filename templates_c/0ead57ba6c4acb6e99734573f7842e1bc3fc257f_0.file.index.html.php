@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-06-08 18:02:38
+/* Smarty version 3.1.39, created on 2021-06-10 16:45:38
   from '/usr/share/nginx/html/mini_shop/templates/index.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_60bf403ec74ac9_71870165',
+  'unifunc' => 'content_60c1d1327ede53_92670305',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '0ead57ba6c4acb6e99734573f7842e1bc3fc257f' => 
     array (
       0 => '/usr/share/nginx/html/mini_shop/templates/index.html',
-      1 => 1623146409,
+      1 => 1623163078,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:index_side.html' => 1,
   ),
 ),false)) {
-function content_60bf403ec74ac9_71870165 (Smarty_Internal_Template $_smarty_tpl) {
+function content_60c1d1327ede53_92670305 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="zh-Hant">
 	<head>
