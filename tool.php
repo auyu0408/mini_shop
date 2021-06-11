@@ -6,9 +6,6 @@ if (!isset($_SESSION['user_name'])){
 }
 
 /*流程控制*/
-echo "Hello World";
-echo $_REQUEST['op'];
-echo $_FILES['goods_pic']['tmp_name'];
 $op = isset($_REQUEST['op']) ? my_filter($_REQUEST['op'], "string") :'';
 switch($op){
 	case 'good_form':
@@ -48,7 +45,7 @@ function insert_goods(){
 //upload pic
 function save_goods_pic($goods_sn = "")
 {
-	include_once "vendor/verot/class.upload.php/src/class.upload.php";
+	include_once "vendor/class.upload.php/src/class.upload.php";
 	$pic = new \Verot\Upload\Upload($_FILES['goods_pic']);
 	if($pic->uploaded)
 	{

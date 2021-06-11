@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-06-10 16:45:38
+/* Smarty version 3.1.39, created on 2021-06-11 18:56:41
   from '/usr/share/nginx/html/mini_shop/templates/index.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_60c1d1327ede53_92670305',
+  'unifunc' => 'content_60c34169e16168_55900184',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '0ead57ba6c4acb6e99734573f7842e1bc3fc257f' => 
     array (
       0 => '/usr/share/nginx/html/mini_shop/templates/index.html',
-      1 => 1623163078,
+      1 => 1623408958,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:index_side.html' => 1,
   ),
 ),false)) {
-function content_60c1d1327ede53_92670305 (Smarty_Internal_Template $_smarty_tpl) {
+function content_60c34169e16168_55900184 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="zh-Hant">
 	<head>
@@ -32,9 +32,9 @@ function content_60c1d1327ede53_92670305 (Smarty_Internal_Template $_smarty_tpl)
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title><?php echo $_smarty_tpl->tpl_vars['shop_name']->value;?>
 </title>
-		<link href="vendor/twbs/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+		<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 		<?php echo '<script'; ?>
- src="vendor/twbs/bootstrap/dist/js/bootstrap.min.js"><?php echo '</script'; ?>
+ src="vendor/bootstrap/js/bootstrap.min.js"><?php echo '</script'; ?>
 >
 		<link href="style.css" rel="stylesheet">
 	</head>
