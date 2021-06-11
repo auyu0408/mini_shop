@@ -1,9 +1,8 @@
 <?php
-require_once "vendor/verot/class.upload.php/src/class.upload.php";
+namespace Verot\Upload;
+require_once "vendor/upload/src/class.upload.php";
 
-echo "Hello1";
-
-$pic = new \Verot\Upload\Upload($_FILES['picture']);
+$pic = new Upload($_FILES['picture'],'zh_TW');
 echo "Hello2";
 if($pic->uploaded)
 {
@@ -13,12 +12,13 @@ if($pic->uploaded)
 	$pic->image_x = 600;
 	$pic->image_y = 400;
 	$pic->image_convert = 'png';
-	$pic->image_ratio_crop =true;
+	$pic->image_ratio_crop = true;
+	$pic->png_compression = 9;
 	$pic->process('uploads/goods/');
 	if($pic->processed)
 	{
 		echo 'image resized';
-		$pic->clean();
+		$pic->Clean();
 	}
 	else
 	{

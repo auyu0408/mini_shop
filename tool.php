@@ -1,4 +1,5 @@
 <?php
+namespace Verot\Upload;
 /*引入*/
 require_once "header.php";
 if (!isset($_SESSION['user_name'])){
@@ -45,8 +46,8 @@ function insert_goods(){
 //upload pic
 function save_goods_pic($goods_sn = "")
 {
-	include_once "vendor/class.upload.php/src/class.upload.php";
-	$pic = new \Verot\Upload\Upload($_FILES['goods_pic']);
+	include_once "vendor/upload/src/class.upload.php";
+	$pic = new Upload($_FILES['goods_pic'],'zh_TW');
 	if($pic->uploaded)
 	{
 		//big
@@ -57,7 +58,7 @@ function save_goods_pic($goods_sn = "")
 		$pic->image_y = 400;
 		$pic->image_convert = 'png';
 		$pic->image_ratio_crop = true;
-		$pic->process('uploads/goods/');
+		$pic->Process('uploads/goods/');
 		if(!$pic->processed)
 		{
 			return 'error:'.$pic->error;
@@ -66,15 +67,15 @@ function save_goods_pic($goods_sn = "")
 		//small,應該是需要寫兩遍沒錯,他一次設定好像只能傳一次:w
 		$pic->file_new_name_body = $goods_sn;
 		$pic->file_overwrite = true;
-		$pic->file_resize = true;
+		$pic->image_resize = true;
 		$pic->image_x = 300;
 		$pic->image_y = 200;
 		$pic->image_convert = 'png';
 		$pic->image_ratio_crop = true;
-		$pic->process('uploads/thumbs/');
+		$pic->Process('uploads/thumbs/');
 		if($pic->processed)
 		{
-			$pic->clean();
+			$pic->Clean();
 		}
 		else
 		{
