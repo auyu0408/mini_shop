@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-06-10 21:05:54
+/* Smarty version 3.1.39, created on 2021-06-11 00:59:37
   from '/usr/share/nginx/html/mini_shop/templates/goods_form.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_60c20e3223b752_43449056',
+  'unifunc' => 'content_60c244f9bc8c76_97084738',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '2f3446b860578558e53216be769ea78999df770b' => 
     array (
       0 => '/usr/share/nginx/html/mini_shop/templates/goods_form.html',
-      1 => 1623330280,
+      1 => 1623342782,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_60c20e3223b752_43449056 (Smarty_Internal_Template $_smarty_tpl) {
+function content_60c244f9bc8c76_97084738 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <h1>Edit goods</h1>
 <form action="tool.php" method="post" class="form-horizontal" role="form" enctype="multipart/form-data">
