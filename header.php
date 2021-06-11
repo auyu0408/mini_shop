@@ -2,7 +2,7 @@
 session_start();
 require_once "config.php";
 require_once "function.php";
-require_once '/usr/local/lib/php/Smarty/Smarty.class.php';
+require_once 'Smarty/Smarty.class.php';
 $smarty = new Smarty;
 
 $smarty->template_dir = 'templates';
