@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 <h1>Edit goods</h1>
+<script src="vendor/ckeditor/ckeditor.js"></script>
+<script src="vendor/ckfinder/ckfinder.js"></script>
 <form action="tool.php" method="post" class="form-horizontal" role="form" enctype="multipart/form-data">
 	<div class="form-group">
 		<label class="col-2 control-label">Product name:</label>
@@ -38,3 +40,11 @@
 		</div>
 	</div>
 </form>
+
+<script>
+	var editor = CKEDITOR.replace('goods_content');
+	CKEDITOR.replace( 'editor1', {
+    filebrowserBrowseUrl: '/ckfinder/ckfinder.html',
+    filebrowserUploadUrl: '/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files'
+} );
+</script>

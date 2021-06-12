@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-06-11 00:59:37
+/* Smarty version 3.1.39, created on 2021-06-12 17:14:23
   from '/usr/share/nginx/html/mini_shop/templates/goods_form.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_60c244f9bc8c76_97084738',
+  'unifunc' => 'content_60c47aef400634_41637246',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '2f3446b860578558e53216be769ea78999df770b' => 
     array (
       0 => '/usr/share/nginx/html/mini_shop/templates/goods_form.html',
-      1 => 1623342782,
+      1 => 1623489255,
       2 => 'file',
     ),
   ),
@@ -20,9 +20,15 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_60c244f9bc8c76_97084738 (Smarty_Internal_Template $_smarty_tpl) {
+function content_60c47aef400634_41637246 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <h1>Edit goods</h1>
+<?php echo '<script'; ?>
+ src="vendor/ckeditor/ckeditor.js"><?php echo '</script'; ?>
+>
+<?php echo '<script'; ?>
+ src="vendor/ckfinder/ckfinder.js"><?php echo '</script'; ?>
+>
 <form action="tool.php" method="post" class="form-horizontal" role="form" enctype="multipart/form-data">
 	<div class="form-group">
 		<label class="col-2 control-label">Product name:</label>
@@ -61,5 +67,15 @@ function content_60c244f9bc8c76_97084738 (Smarty_Internal_Template $_smarty_tpl)
 		</div>
 	</div>
 </form>
+
+<?php echo '<script'; ?>
+>
+	var editor = CKEDITOR.replace('goods_content');
+	CKEDITOR.replace( 'editor1', {
+    filebrowserBrowseUrl: '/ckfinder/ckfinder.html',
+    filebrowserUploadUrl: '/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files'
+} );
+<?php echo '</script'; ?>
+>
 <?php }
 }
