@@ -14,7 +14,7 @@
 		<div class="container">
 			<div id="shop_head">
 				<a herf="index.php">
-					<img src="image/title.jpg" alt="{$shop_name}" class="img-responsive"><img src="image/title_sm.jpg" width="300" alt="little 3boshi" class="img-responsive">
+					<img src="image/title.gif" alt="{$shop_name}" class="img-responsive"><img src="image/title_sm.png" width="300" alt="little 3boshi" class="img-responsive">
 <!--img-responsive自適應功能，alt無障礙網頁，沒有圖片時也有文字說明，兩個中間沒換行可以並排，然後利用限制圖片寬度或高度來縮小圖片，讓他在比例內-->
 				</a>
 			</div>
@@ -23,15 +23,15 @@
 					{if $op=="goods_form"}
 						{include file ="goods_form.html"}
 					{else}
-						{$content}
+						{include file ='goods_list.html'}
 					{/if}
 				</div>
 				<div class="col-3">{include file='index_side.html'}</div>
 			</div>
 			<div id="shop_foot" class="text-cent">
-				<div>Address: 日本〒167-0053 Tokyo, Suginami City, Nishiogiminami, 2 Chome-11-5</div>
-				<div>Phone:+81 3-2021-0211</div>
-				<div>copyright &#169 2021 3bosui_youshudo.net All right reserved.</div>
+				<div>カバー株式会社</div>
+				<div>Address: 日本〒104-0023 Tokyo, Chuo City, Shinkawa, 1 Chome-25-2</div>
+				<div>copyright Impressum &#169 2021 cover corp. All right reserved.</div>
 <!--&#169是版權符號-->
 			</div>
 		</div>

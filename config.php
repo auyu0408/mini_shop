@@ -1,5 +1,5 @@
 <?php
-define('_SHOP_NAME', 'MITSUBOSHI YOUSHUDOU');
+define('_SHOP_NAME', 'Hololive production');
 define('_DB_HOST', 'localhost');
 define('_DB_ID', 'ubuntu');
 define('_DB_PW', 'Gurame5150');

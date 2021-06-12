@@ -1,5 +1,5 @@
 body{
-	background-color: rgb(169, 99, 96);
+	background-color: rgb(211, 237, 250);
 	font-family:Tlwg Mono;
 }
 .container
@@ -17,8 +17,8 @@ body{
 }
 #shop_foot
 {
-	background-color: rgb(186,145,50);
-	color: #fff;
+	background-color: rgb(236, 171, 201);
+	color: rgb(147, 77, 146);
 	padding: 30px;
 	line-height: 1.8;
 	margin: 15px 0px;
