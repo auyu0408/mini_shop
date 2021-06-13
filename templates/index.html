@@ -22,6 +22,8 @@
 				<div class="col-9">
 					{if $op=="goods_form"}
 						{include file ="goods_form.html"}
+					{else if $op=="goods_display"}
+						{include file ="goods_display.html"}
 					{else}
 						{include file ='goods_list.html'}
 					{/if}
