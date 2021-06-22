@@ -12,7 +12,33 @@
 <br>
 <div class="row">
 	<div class="col-md-12">
-		<h3>Introduction</h3>
-		<p>{$goods.goods_content}</p>
+		<ul class="nav nav-tabs" role="tablist">
+			<li class="nav-item" role="presentation">
+				<button class="nav-link active" id="goods-tab" data-bs-toggle="tab" data-bs-target="#goods" type="button" role="tab" aria-controls="goods" aria-selected="true">Introduction</button>
+			</li>
+			<li class="nav-item" role="presentation">
+				<button class="nav-link" id="note-tab" data-bs-toggle="tab" data-bs-target="#note" type="button" role="tab" aria-controls="note" aria-selected="false">Notice</button>
+			</li>
+			<li role="nav-item" role="presentation">
+				<button class="nav-link" id="service-tab" data-bs-toggle="tab" data-bs-target="#service" type="button" role="tab" aria-controls="goods" aria-selected="false">Service</button>
+			</li>
+			<li role="nav-item" role="presentation">
+				<button class="nav-link" id="special-tab" data-bs-toggle="tab" data-bs-target="#special" type="button" role="tab" aria-controls="goods" aria-selected="false">Special</button>
+			</li>
+		</ul>
+		<div class="tab-content">
+			<div class="tab-pane fade show active" id="goods" role="tabpanel" aria-labelledby="goods-tab">
+				{$goods.goods_content}
+			</div>
+			<div class="tab-pane fade" id="note" role="tabpanel" aria-laballedy="note-tab">
+				Notice Test
+			</div>
+			<div class="tab-pane fade" id="service" role="tabpanel" aria-laballedy="special-tab">
+				Service Test
+			</div>
+			<div class="tab-pane fade" id="special" role="tabpanel" aria-laballedy="special-tab">
+				Special Test
+			</div>
+		</div>
 	</div>
 </div>
