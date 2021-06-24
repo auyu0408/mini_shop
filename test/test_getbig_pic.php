@@ -1,6 +1,6 @@
 <?php
 
-$file = get_goods_pic($goods_sn=44, $type="goods");
+$file = get_goods_pic($goods_sn=43, $type="goods");
 echo $file;
 
 function get_goods_pic($goods_sn ='', $type="goods")

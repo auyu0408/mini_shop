@@ -6,21 +6,21 @@
 	<div class="form-group">
 		<label class="col-2 control-label">Product name:</label>
 		<div class="col-10">
-			<input type="text" class="form-control" name="goods_title" id="goods_title" placeholder="please enter good's name" value="">
+			<input type="text" class="form-control" name="goods_title" id="goods_title" placeholder="please enter good's name" value="{$goods.goods_title}">
 		</div>
 	</div>
 
 	<div class="form-group">
 		<label class="col-2 control-label">Product content:</label>
 		<div class="col-10">
-			<textarea class="form-control" name="goods_content" id="goods_content" placeholder="please enter good's content"></textarea>
+			<textarea class="form-control" name="goods_content" id="goods_content" placeholder="please enter good's content">{$goods.goods_content}</textarea>
 		</div>
 	</div>
 
 	<div class="form-group">
 		<label class="col-2 control-label">Product price:</label>
 		<div class="col-10">
-			<input type="text" class="form-control" name="goods_price" id="goods_price" placeholder="please enter good's price" value="">
+			<input type="text" class="form-control" name="goods_price" id="goods_price" placeholder="please enter good's price" value="{$goods.goods_price}">
 		</div>
 	</div>
 
@@ -28,12 +28,20 @@
 		<label class="col-2 control-label">Product picture:</label>
 		<div class="col-10">
 			<input type="file" name="goods_pic" id="goods_pic">
+			{if isset($goods.pic)}
+			<img src="{$goods.pic}" alt="{$goods.goods_title}">
+			{/if}
 		</div>
 	</div>
 
 	<div class="form-group">
 		<div class="col-offset-2 col-10">
+			{if isset($goods.goods_sn) and $goods.goods_sn > 0}
+			<input type="hidden" name="op" value="update_goods">
+			<input type="hidden" name="goods_sn" value="{$goods.goods_sn}">
+			{else}
 			<input type="hidden" name="op" value="insert_goods">
+			{/if}
 			<!--一個op的隱藏表單,是為了把東西導向正確網頁-->
 			<br>
 			<button type="submit" class="btn btn-outline-dark">Save goods</button>

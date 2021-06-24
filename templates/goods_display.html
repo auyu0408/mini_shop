@@ -5,7 +5,14 @@
 	</div>
 	<div class="col-md-6">
 		<h2>{$goods.goods_title}</h2>
-		Price:{$goods.goods_price}NTD
+		<p>Price:{$goods.goods_price}NTD</p>
+		<p>Popular:{$goods.goods_counter}</p>
+		{if isset($user_name)}
+			<div>
+				<a href="tool.php?op=goods_form&goods_sn={$goods.goods_sn}" class="btn btn-outline-secondary">edit</a>
+				<a href="tool.php?op=delete_goods&goods_sn={$goods.goods_sn}" class="btn btn-outline-danger">delete</a>
+			</div>
+		{/if}
 	</div>
 </div>
 
@@ -28,7 +35,7 @@
 		</ul>
 		<div class="tab-content">
 			<div class="tab-pane fade show active" id="goods" role="tabpanel" aria-labelledby="goods-tab">
-				{$goods.goods_content}
+				<p>{$goods.goods_content}</p>
 			</div>
 			<div class="tab-pane fade" id="note" role="tabpanel" aria-laballedy="note-tab">
 				Notice Test

@@ -22,7 +22,7 @@ default:
 	if($goods_sn)
 	{
 		$op = 'goods_display';
-		display_goods(goods_sn);
+		display_goods($goods_sn);
 	}
 	else
 	{
@@ -50,12 +50,7 @@ function user_login()
 function list_goods()
 {
 	global $smarty, $mysqli;
-	//include_once "vendor/PageBar.php";
 	$sql = "select * from `goods` order by `goods_date` desc";
-	//$PageBar = getPageBar($sql, 1, 10);
-	//$total = $PageBar['total'];
-	//$bar = ($total > 1) ? $PageBar['bar'] : "";
-	//$sql = $PageBar['sql'];
 	$result = $mysqli->query($sql) or die($mysqli->connect_error);
 	$i = 0;
 	while($goods = $result->fetch_assoc())//fetch_assoc一次一筆，會抓到沒有，抓回來是一維陣列，放在goods內
@@ -66,32 +61,26 @@ function list_goods()
 	}
 
 	$smarty->assign('all_goods', $all_goods);
-	//$smarty->assign('total', $total);
-	//$smarty->assign('bar', $bar);
-}
-
-function get_goods_pic($goods_sn ='', $type="goods")
-{
-	$filename = "uploads/{$type}/{$goods_sn}.png";
-	if(file_exists($filename))
-	{
-		return $filename;
-	}
-	else
-	{
-		$size = ($type == 'thumbs') ? "300x200" : "600x400";
-		return "https://dummyimage.com/{$size}/8a909e/ffffff.gif&text=no+image";
-	}
 }
 
 function display_goods($goods_sn = '')
 {
 	global $mysqli, $smarty;
+	add_goods_counter($goods_sn);
 	$sql = "select * from goods where goods_sn={$goods_sn}";
 	$result = $mysqli->query($sql) or die($mysql->connect_error);
 	$goods = $result->fetch_assoc();
 	$goods['pic'] = get_goods_pic($goods['goods_sn']);
 	$smarty->assign('goods',$goods);
+}
+//counter
+function add_goods_counter($goods_sn)
+{
+	global $mysqli;
+
+	$sql = "update goods set goods_counter=goods_counter+1 where goods_sn='{$goods_sn}'";
+	$mysqli->query($sql) or die($mysqli->connect_error);
+
 }
 ?>
 
