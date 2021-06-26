@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<h1>Sign up</h1>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/twzipcode.js"></script>
+	<script src="vendor/twzipcode.js"></script>
+
+<form action="user.php" method="post" class="form-horizontal">
+	<div class="row g-3">
+		<div class="col-md-6">
+			<label for="user_name">Name:</label>
+			<input type="text" class="form-control" name="user_name" id="user_name" placeholder="please enter your name" value="{$user.user_name}">
+		</div>
+	
+		<div class="col-md-6">
+			<label for="user_sex">Sex:</label>
+			<br>
+			<label class="radio-inline">
+				<input type="radio" name="user_sex" id="user_sex_1" value="M" {if $user.user_sex=='M'}checked{/if}> Male
+			</label>
+			<label class="radio-inline">
+				<input type="radio" name="user_sex" id="user_sex_0" value="F" {if $user.user_sex=='F'}checked{/if}> Female
+			</label>
+		</div>
+
+		<div class="col-md-6">
+			<label for="user_id">ID:</label>
+			<input type="text" class="form-control" name="user_id" id="user_id" placeholder="please enter your account id" value="{$user.user_id}">
+		</div>
+
+		<div class="col-md-6">
+			<label for="user_passwd">Password:</label>
+			<input type="password" class="form-control" name="user_passwd" id="user_passwd" placeholder="please enter your password">
+		</div>
+
+		<div class="col-md-6">
+			<label for="user_email">Email:</label>
+			<input type="text" class="form-control" name="user_email" id="user_email" placeholder="please enter you email" value="{$user.user_email}">
+		</div>
+
+		<div class="col-md-6">
+			<label for="user_tel">Phone:</label>
+			<input type="text" class="form-control" name="user_tel" id="user_tel" placeholder="please enter your phone number" value="{$user.user_tel}">
+		</div>
+
+		<div>
+			<label class="col-md-2 control-label">Address:</label>
+			<div id="twzipcode">
+				<div class="col-md-2">
+					<div data-role="zipcode"
+						 data-name="user-zip"
+					 	data-value="{$user.user_zip}"
+					 	data-style="form-control">
+					</div>
+				</div>
+				<div class="col-md-2">
+					<div data-role="country"
+						 data-name="user_country"
+					 	data-value="{$user.user_country}"
+					 	data-style="form-control">
+					</div>
+				</div>
+				<div class="col-md-2">
+					<div data-role="district"
+						 data-name="user_district"
+					 	data-value="{$user.user_district}"
+					 	data-style="form-control">
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<input type="text" class="form-control" name="user_address" id="user_address" placeholder="please enter address" value="{$user.user_address}">
+			</div>
+		</div>
+
+		<div class="col-12">
+			<br>
+			<input type="hidden" name="op" value="insert_user">
+			<button type="submit" class="btn btn-outline-info">Save</button>
+		</div>
+
+	</div>
+
+</form>
