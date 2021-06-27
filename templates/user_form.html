@@ -1,8 +1,20 @@
 <!DOCTYPE html>
 <h1>Sign up</h1>
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/twzipcode.js"></script>
-	<script src="vendor/twzipcode.js"></script>
 
+<!--
+	<script language="javascript" src="vendor/jquery.twzipcode.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$("#twzipcode").twzipcode();
+		});
+	</script>
+
+	<div id="twzipcode">
+  		<div data-role="county" data-style="Style Name" data-value="110"></div>
+  		<div data-role="district" data-style="Style Name" data-value="臺北市"></div>
+  		<div data-role="zipcode" data-style="Style Name" data-value="信義區"></div>
+	</div>
+-->
 <form action="user.php" method="post" class="form-horizontal">
 	<div class="row g-3">
 		<div class="col-md-6">
@@ -26,9 +38,9 @@
 			<input type="text" class="form-control" name="user_id" id="user_id" placeholder="please enter your account id" value="{$user.user_id}">
 		</div>
 
-		<div class="col-md-6">
+		<div class="col-md-6 has-error">
 			<label for="user_passwd">Password:</label>
-			<input type="password" class="form-control" name="user_passwd" id="user_passwd" placeholder="please enter your password">
+			<input type="password" class="form-control {if $user.user_passwd==''} validate[required] {/if}" name="user_passwd" id="user_passwd" placeholder="{if $user.user_passwd} 需要改密碼才寫{else}please enter your password{/if}">
 		</div>
 
 		<div class="col-md-6">
@@ -41,39 +53,29 @@
 			<input type="text" class="form-control" name="user_tel" id="user_tel" placeholder="please enter your phone number" value="{$user.user_tel}">
 		</div>
 
-		<div>
+		
 			<label class="col-md-2 control-label">Address:</label>
-			<div id="twzipcode">
 				<div class="col-md-2">
-					<div data-role="zipcode"
-						 data-name="user-zip"
-					 	data-value="{$user.user_zip}"
-					 	data-style="form-control">
-					</div>
+					<input type="text" class="form-control" name="user_zip" id="user_zip" placeholder="zip(ex.110)" value="{$user.user_zip}">
 				</div>
 				<div class="col-md-2">
-					<div data-role="country"
-						 data-name="user_country"
-					 	data-value="{$user.user_country}"
-					 	data-style="form-control">
-					</div>
+					<input type="text" class="form-control" name="user_country" id="user_country" placeholder="縣市(ex.台北市)" value="{$user.user_country}">
 				</div>
 				<div class="col-md-2">
-					<div data-role="district"
-						 data-name="user_district"
-					 	data-value="{$user.user_district}"
-					 	data-style="form-control">
-					</div>
+					<input type="text" class="form-control" name="user_district" id="user_district" placeholder="區(ex.信義區)" value="{$user.user_district}">
 				</div>
-			</div>
 			<div class="col-md-4">
 				<input type="text" class="form-control" name="user_address" id="user_address" placeholder="please enter address" value="{$user.user_address}">
 			</div>
-		</div>
-
+		
 		<div class="col-12">
 			<br>
+			{if $user.user_sn>0}
+			<input type="hidden" name="op" value="update_user">
+			<input type="hidden" name="user_sn" value="{$user.user_sn}">
+			{else}
 			<input type="hidden" name="op" value="insert_user">
+			{/if}
 			<button type="submit" class="btn btn-outline-info">Save</button>
 		</div>
 

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-06-27 01:39:51
+/* Smarty version 3.1.39, created on 2021-06-27 20:41:28
   from '/usr/share/nginx/html/mini_shop/templates/user_form.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_60d76667e1f9d5_59429827',
+  'unifunc' => 'content_60d871f8bf5713_26237273',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'd76844a06ab2bdd0e70911e2fa91f4b4f2a5e671' => 
     array (
       0 => '/usr/share/nginx/html/mini_shop/templates/user_form.html',
-      1 => 1624729186,
+      1 => 1624797685,
       2 => 'file',
     ),
   ),
@@ -20,16 +20,28 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_60d76667e1f9d5_59429827 (Smarty_Internal_Template $_smarty_tpl) {
+function content_60d871f8bf5713_26237273 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <h1>Sign up</h1>
+
+<!--
 	<?php echo '<script'; ?>
- src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/twzipcode.js"><?php echo '</script'; ?>
+ language="javascript" src="vendor/jquery.twzipcode.min.js"><?php echo '</script'; ?>
 >
 	<?php echo '<script'; ?>
- src="vendor/twzipcode.js"><?php echo '</script'; ?>
+ type="text/javascript">
+		$(document).ready(function(){
+			$("#twzipcode").twzipcode();
+		});
+	<?php echo '</script'; ?>
 >
 
+	<div id="twzipcode">
+  		<div data-role="county" data-style="Style Name" data-value="110"></div>
+  		<div data-role="district" data-style="Style Name" data-value="臺北市"></div>
+  		<div data-role="zipcode" data-style="Style Name" data-value="信義區"></div>
+	</div>
+-->
 <form action="user.php" method="post" class="form-horizontal">
 	<div class="row g-3">
 		<div class="col-md-6">
@@ -55,9 +67,9 @@ function content_60d76667e1f9d5_59429827 (Smarty_Internal_Template $_smarty_tpl)
 ">
 		</div>
 
-		<div class="col-md-6">
+		<div class="col-md-6 has-error">
 			<label for="user_passwd">Password:</label>
-			<input type="password" class="form-control" name="user_passwd" id="user_passwd" placeholder="please enter your password">
+			<input type="password" class="form-control <?php if ($_smarty_tpl->tpl_vars['user']->value['user_passwd'] == '') {?> validate[required] <?php }?>" name="user_passwd" id="user_passwd" placeholder="<?php if ($_smarty_tpl->tpl_vars['user']->value['user_passwd']) {?> 需要改密碼才寫<?php } else { ?>please enter your password<?php }?>">
 		</div>
 
 		<div class="col-md-6">
@@ -72,43 +84,34 @@ function content_60d76667e1f9d5_59429827 (Smarty_Internal_Template $_smarty_tpl)
 ">
 		</div>
 
-		<div>
+		
 			<label class="col-md-2 control-label">Address:</label>
-			<div id="twzipcode">
 				<div class="col-md-2">
-					<div data-role="zipcode"
-						 data-name="user-zip"
-					 	data-value="<?php echo $_smarty_tpl->tpl_vars['user']->value['user_zip'];?>
-"
-					 	data-style="form-control">
-					</div>
+					<input type="text" class="form-control" name="user_zip" id="user_zip" placeholder="zip(ex.110)" value="<?php echo $_smarty_tpl->tpl_vars['user']->value['user_zip'];?>
+">
 				</div>
 				<div class="col-md-2">
-					<div data-role="country"
-						 data-name="user_country"
-					 	data-value="<?php echo $_smarty_tpl->tpl_vars['user']->value['user_country'];?>
-"
-					 	data-style="form-control">
-					</div>
+					<input type="text" class="form-control" name="user_country" id="user_country" placeholder="縣市(ex.台北市)" value="<?php echo $_smarty_tpl->tpl_vars['user']->value['user_country'];?>
+">
 				</div>
 				<div class="col-md-2">
-					<div data-role="district"
-						 data-name="user_district"
-					 	data-value="<?php echo $_smarty_tpl->tpl_vars['user']->value['user_district'];?>
-"
-					 	data-style="form-control">
-					</div>
+					<input type="text" class="form-control" name="user_district" id="user_district" placeholder="區(ex.信義區)" value="<?php echo $_smarty_tpl->tpl_vars['user']->value['user_district'];?>
+">
 				</div>
-			</div>
 			<div class="col-md-4">
 				<input type="text" class="form-control" name="user_address" id="user_address" placeholder="please enter address" value="<?php echo $_smarty_tpl->tpl_vars['user']->value['user_address'];?>
 ">
 			</div>
-		</div>
-
+		
 		<div class="col-12">
 			<br>
+			<?php if ($_smarty_tpl->tpl_vars['user']->value['user_sn'] > 0) {?>
+			<input type="hidden" name="op" value="update_user">
+			<input type="hidden" name="user_sn" value="<?php echo $_smarty_tpl->tpl_vars['user']->value['user_sn'];?>
+">
+			<?php } else { ?>
 			<input type="hidden" name="op" value="insert_user">
+			<?php }?>
 			<button type="submit" class="btn btn-outline-info">Save</button>
 		</div>
 
