@@ -1,10 +1,13 @@
 		<div class="toolbox">
 		<div class="alert alert-info col-12">
-			Hi, {$user_name}. Welecome to {$shop_name}!
+			Hi, {$login_user.user_name}. Welecome to {$shop_name}!
 		</div>
 		</div>
 		<div class="d-grid gap-2 col-6 mx-auto">
 		<a href="index.php" class="btn btn-outline-info">Home</a>
-		<a href="tool.php?op=goods_form" class="btn btn-outline-warning">Published</a>
-		<a href="index.php?op=user_logout" class="btn btn-outline-dark">Logout</a>
+		<a href="user.php?op=user_display&user_sn={$login_user.user_sn}" class="btn btn-outline-warning">My account</a>
+		{if $isAdmin}
+			<a href="tool.php?op=goods_form" class="btn btn-outline-secondary">Published</a>
+			{/if}
+		<a href="user.php?op=user_logout" class="btn btn-outline-danger">Log out</a>
 		</div>

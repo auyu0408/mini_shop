@@ -6,7 +6,6 @@ require_once "header.php";
 $op = isset($_REQUEST['op']) ? my_filter($_REQUEST['op'], "string") :'';
 $user_sn = isset($_REQUEST['user_sn'])?my_filter($_REQUEST['user_sn'], "int") : 0;
 $user_id = isset($_REQUEST['user_id'])?my_filter($_REQUEST['user_id'], "string"):'';
-echo $isUser;
 switch($op){
 	case 'user_form':
 		user_form($user_sn);
@@ -44,7 +43,7 @@ switch($op){
 
 	case 'user_logout':
 		user_logout();
-		header("location:{$_SERVER['PHP_SELF']}");
+		header("location:index.php");
 		exit;
 		break;
 	
@@ -122,6 +121,16 @@ function display_user($user_sn)
 	$result = $mysqli->query($sql) or die($mysqli->connect_error);
 	$user = $result->fetch_assoc();
 	$smarty->assign('user',$user);
+
+	$all_users = '';
+	if($isAdmin)
+	{
+		$sql = "select * from users";
+		$result = $mysqli->query($sql) or die($mysqli->connect_error);
+		$all_users = $result->fetch_all(MYSQLI_ASSOC);
+	}
+	$smarty->assign('all_users', $all_users);
+	$smarty->assign('now_user_sn', $user_sn);
 }
 
 //update
@@ -164,6 +173,13 @@ function update_user($user_sn)
 //delete
 function delete_user($user_sn)
 {
+	global $mysqli, $isAdmin;
+	if(!$isAdmin)
+	{
+		return;
+	}
+	$sql = "delete from users where user_sn='{$user_sn}'";
+	$mysqli->query($sql) or die($mysqli>connect_error);
 }
 
 //user login
@@ -180,7 +196,7 @@ function user_login($user_id)
 	{
 		if(password_verify($_POST['user_passwd'], $user['user_passwd']))
 		{
-			$_SEESION['user_sn'] = $user['user_sn'];
+			$_SESSION['user_sn'] = $user['user_sn'];
 			$_SESSION['user'] = $user;
 			return true;
 		}
@@ -191,7 +207,8 @@ function user_login($user_id)
 //user logout
 function user_logout()
 {
-
+	unset($_SESSION['user_sn']);
+	unset($_SESSION['user']);
 }
 
 ?>

@@ -7,7 +7,7 @@
 		<h2>{$goods.goods_title}</h2>
 		<p>Price:{$goods.goods_price}NTD</p>
 		<p>Popular:{$goods.goods_counter}</p>
-		{if isset($user_name)}
+		{if $isAdmin}
 			<div>
 				<a href="tool.php?op=goods_form&goods_sn={$goods.goods_sn}" class="btn btn-outline-secondary">edit</a>
 				<a href="tool.php?op=delete_goods&goods_sn={$goods.goods_sn}" class="btn btn-outline-danger">delete</a>

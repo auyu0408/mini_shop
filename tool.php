@@ -2,8 +2,9 @@
 namespace Verot\Upload;
 /*引入*/
 require_once "header.php";
-if (!isset($_SESSION['user_name'])){
+if (!$isAdmin){
 	header("location:index.php");
+	exit;
 }
 
 /*流程控制*/
