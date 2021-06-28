@@ -70,7 +70,7 @@ function insert_goods(){
 
 
 	$sql = "INSERT INTO goods(goods_title,goods_content,goods_price,goods_counter,goods_date) VALUES('{$goods_title}','{$goods_content}','{$goods_price}','0','{$goods_date}')";
-	$mysqli->query($sql) or die($mysqli->counter_error);
+	$mysqli->query($sql) or die($mysqli->connect_error);
 	$goods_sn = $mysqli->insert_id;
 	save_goods_pic($goods_sn);
 	return $goods_sn;

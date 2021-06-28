@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-06-25 00:59:26
+/* Smarty version 3.1.39, created on 2021-06-27 21:56:11
   from '/usr/share/nginx/html/mini_shop/templates/goods_display.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_60d4b9ee01e4c5_13555520',
+  'unifunc' => 'content_60d8837b1603b8_90044142',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '699025c16f14fd770f40901e8518f352e0793578' => 
     array (
       0 => '/usr/share/nginx/html/mini_shop/templates/goods_display.html',
-      1 => 1624553962,
+      1 => 1624795466,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_60d4b9ee01e4c5_13555520 (Smarty_Internal_Template $_smarty_tpl) {
+function content_60d8837b1603b8_90044142 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <div class="row">
 	<div class="col-md-6">

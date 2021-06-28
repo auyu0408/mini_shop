@@ -5,6 +5,8 @@ require_once "header.php";
 /*流程控制*/
 $op = isset($_REQUEST['op']) ? my_filter($_REQUEST['op'], "string") :'';
 $user_sn = isset($_REQUEST['user_sn'])?my_filter($_REQUEST['user_sn'], "int") : 0;
+$user_id = isset($_REQUEST['user_id'])?my_filter($_REQUEST['user_id'], "string"):'';
+echo $isUser;
 switch($op){
 	case 'user_form':
 		user_form($user_sn);
@@ -14,10 +16,6 @@ switch($op){
 		$user_sn = insert_user();
 		header("location:{$_SERVER['PHP_SELF']}?op=display_user&user_sn=$user_sn");
 		exit;
-		break;
-
-	case 'display_user':
-		display_user($user_sn);
 		break;
 
 	case 'update_user':
@@ -34,8 +32,13 @@ switch($op){
 		break;
 
 	case 'user_login':
-		user_login();
-		header("location:{$_SERVER['PHP_SELF']}");
+		$login = user_login($user_id);
+		if($login){
+			header("location:{$_SERVER['PHP_SELF']}");
+		}
+		else{
+			header("location:index.php");
+		}
 		exit;
 		break;
 
@@ -43,6 +46,12 @@ switch($op){
 		user_logout();
 		header("location:{$_SERVER['PHP_SELF']}");
 		exit;
+		break;
+	
+	case 'display_user':
+	default:
+		$op = 'display_user';
+		display_user($user_sn);
 		break;
 }
 
@@ -85,7 +94,7 @@ function insert_user()
 	$sql = "insert into users(user_name, user_id, user_passwd, user_email, user_sex, user_tel, user_zip, user_country, user_district, user_address) values('{$user_name}','{$user_id}','{$user_passwd}','{$user_email}','{$user_sex}','{$user_tel}','{$user_zip}','{$user_country}','{$user_district}','{$user_address}')";
 
 	$mysqli->query($sql) or die($mysqli->connect_error);
-	$user_sn = $mysqli->$insert_id;
+	$user_sn = $mysqli->insert_id;
 	$_SESSION['user_sn'] = $user_sn;
 	$_POST['user_sn'] = $user_sn;
 	$_SESSION['user'] = $_POST;
@@ -96,7 +105,19 @@ function insert_user()
 //display user
 function display_user($user_sn)
 {
-	global $mysqli, $smarty;
+	global $mysqli, $smarty, $isAdmin, $isUser;
+	if(empty($user_sn))
+	{
+		$user_sn = $_SESSION['user_sn'];
+	}
+	if($isUser)
+	{
+		$user_sn = $isAdmin ? $user_sn: $_SESSION['user_sn'];
+	}
+	else
+	{
+		die('Not member.');
+	}
 	$sql = "select * from users where user_sn='{$user_sn}'";
 	$result = $mysqli->query($sql) or die($mysqli->connect_error);
 	$user = $result->fetch_assoc();
@@ -106,7 +127,7 @@ function display_user($user_sn)
 //update
 function update_user($user_sn)
 {
-	global $mysqli;
+	global $mysqli, $isAdmin, $isUser;
 	foreach($_POST as $var_title => $var_value)
 	{
 		$$var_title = $mysqli->real_escape_string($_POST[$var_title]);
@@ -116,6 +137,14 @@ function update_user($user_sn)
 	{
 		$user_passwd = password_hash($_POST['user_passwd'], PASSWORD_DEFAULT);
 		$passwd_update = "`user_passwd` = '{$user_passwd}',";
+	}
+	if($isUser)
+	{
+		$user_sn = $isAdmin ? $user_sn : $_SESSION['user_sn'];
+	}
+	else
+	{
+		return;
 	}
 	$sql = "update users set
 		user_name = '{$user_name}',
@@ -138,9 +167,25 @@ function delete_user($user_sn)
 }
 
 //user login
-function user_login()
+function user_login($user_id)
 {
-
+	global $mysqli;
+	if(empty($user_id)){
+		return false;
+	}
+	$sql = "select * from users where user_id='{$user_id}'";
+	$result = $mysqli->query($sql) or die($mysqli->connect_error);
+	$user = $result->fetch_assoc();
+	if(!empty($user))
+	{
+		if(password_verify($_POST['user_passwd'], $user['user_passwd']))
+		{
+			$_SEESION['user_sn'] = $user['user_sn'];
+			$_SESSION['user'] = $user;
+			return true;
+		}
+	}
+	return false;
 }
 
 //user logout
