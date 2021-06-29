@@ -34,7 +34,29 @@
 		<div class="text-center">
 			<a href="user.php?op=user_form&user_sn={$user.user_sn}" class="btn btn-outline-secondary">Edit Profile</a>
 			{if $isAdmin}
-			<a href="user.php?op=delete_user&user_sn={$user.user_sn}" class="btn btn-outline-danger">Delete Account</a>
+				<script src="vendor/bootstrap-sweetalert/sweetalert.min.js"></script>
+				<link rel="stylesheet" type="text/css" href="vendor/bootstrap-sweetalert/sweetalert.css">
+				<script type="text/javascript">
+					function delete_user(user_sn){
+						swal({
+							title:"確定要刪除嗎？",
+							text:"刪掉之後，該會員所有資料會消失喔！",
+							type:"warning",
+							showCancelButton: true,
+							confirmButtonClass:	"btn-outline-danger",
+							confirmButtonText: "Yes",
+							closeOnConfirm: false
+							},
+							function()
+							{
+								location.href='user.php?op=delete_user&user_sn='+user_sn;
+								swal("Success","It's too late.","success");
+							});
+					}
+				</script>
+				{if $now_user_sn!=$login_user.user_sn}
+					<a href="javascript:delete_user('{$user.user_sn}')" class="btn btn-outline-danger">Delete Account</a>
+				{/if}
 			{/if}
 		</div>
 	</div>

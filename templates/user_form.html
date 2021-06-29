@@ -68,8 +68,20 @@
 				<input type="text" class="form-control" name="user_address" id="user_address" placeholder="please enter address" value="{$user.user_address}">
 			</div>
 		
-		<div class="col-12">
+	<div class="col-12">
 			<br>
+			{if $user.user_sn==''}
+			<label class="col-2 control-label" for="user_id">驗證:</label>
+			<div class="col-md-2">
+				<img src="pic.php" alt="請輸入驗證碼">
+			</div>
+			<div class="col-2">
+				<input type="text" class="form-control validate[required]" name="key" placeholder="請輸入驗證碼">
+			</div>
+			{else}
+			<div class="col-6"></div>
+			{/if}
+			<div class="col-md-6">
 			{if $user.user_sn>0}
 			<input type="hidden" name="op" value="update_user">
 			<input type="hidden" name="user_sn" value="{$user.user_sn}">
@@ -78,7 +90,5 @@
 			{/if}
 			<button type="submit" class="btn btn-outline-info">Save</button>
 		</div>
-
 	</div>
-
 </form>
