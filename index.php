@@ -5,16 +5,11 @@ require_once "header.php";
 /*流程控制*/
 $op = isset($_REQUEST['op']) ? my_filter($_REQUEST['op'], "string"): '';
 $goods_sn = isset($_REQUEST['goods_sn']) ? my_filter($_REQUEST['goods_sn'], "int") : 0;
+$goods_title = isset($_REQUEST['goods_title']) ? my_filter($_REQUEST['goods_title'], "string") : 0;
 switch($op){
-case 'user_login':
-	user_login();
-	header("location:{$_SERVER['PHP_SELF']}");
-	exit;
-	break;
-
-case 'user_logout':
-	unset($_SESSION['user_name']);
-	header("location:{$_SERVER['PHP_SELF']}");
+case 'add_to_cart':
+	add_to_cart($goods_sn, $goods_title);
+	header("location:index.php");
 	exit;
 	break;
 
@@ -36,14 +31,16 @@ require_once "footer.php";
 
 /*本檔使用函數*/
 
-//login check
-function user_login()
+//add cart
+function add_to_cart($goods_sn = '', $goods_title='')
 {
-	global $admin_array;
-	$user_name = my_filter($_POST['user_name'], "string");
-	if(in_array($user_name, $admin_array)){
-		$_SESSION['user_name'] = $user_name;
+	if(empty($goods_sn))
+	{
+		return;
 	}
+	$end_time = time() + 365*86400;
+	setcookie("cart[$goods_sn][goods_amount]", 1, $end_time);
+	setcookie("cart[$goods_sn][goods_title], $goods_title, $end_time");
 }
 
 //goods list

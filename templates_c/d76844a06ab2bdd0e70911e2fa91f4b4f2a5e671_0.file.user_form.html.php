@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-06-27 20:41:28
+/* Smarty version 3.1.39, created on 2021-06-29 16:18:25
   from '/usr/share/nginx/html/mini_shop/templates/user_form.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_60d871f8bf5713_26237273',
+  'unifunc' => 'content_60dad751c6c0f3_54477317',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'd76844a06ab2bdd0e70911e2fa91f4b4f2a5e671' => 
     array (
       0 => '/usr/share/nginx/html/mini_shop/templates/user_form.html',
-      1 => 1624797685,
+      1 => 1624954698,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_60d871f8bf5713_26237273 (Smarty_Internal_Template $_smarty_tpl) {
+function content_60dad751c6c0f3_54477317 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <h1>Sign up</h1>
 
@@ -85,38 +85,48 @@ function content_60d871f8bf5713_26237273 (Smarty_Internal_Template $_smarty_tpl)
 		</div>
 
 		
-			<label class="col-md-2 control-label">Address:</label>
-				<div class="col-md-2">
-					<input type="text" class="form-control" name="user_zip" id="user_zip" placeholder="zip(ex.110)" value="<?php echo $_smarty_tpl->tpl_vars['user']->value['user_zip'];?>
-">
-				</div>
-				<div class="col-md-2">
-					<input type="text" class="form-control" name="user_country" id="user_country" placeholder="縣市(ex.台北市)" value="<?php echo $_smarty_tpl->tpl_vars['user']->value['user_country'];?>
-">
-				</div>
-				<div class="col-md-2">
-					<input type="text" class="form-control" name="user_district" id="user_district" placeholder="區(ex.信義區)" value="<?php echo $_smarty_tpl->tpl_vars['user']->value['user_district'];?>
-">
-				</div>
-			<div class="col-md-4">
-				<input type="text" class="form-control" name="user_address" id="user_address" placeholder="please enter address" value="<?php echo $_smarty_tpl->tpl_vars['user']->value['user_address'];?>
+		<label class="col-md-2 control-label">Address:</label>
+			<div class="col-md-2">
+				<input type="text" class="form-control" name="user_zip" id="user_zip" placeholder="zip(ex.110)" value="<?php echo $_smarty_tpl->tpl_vars['user']->value['user_zip'];?>
 ">
 			</div>
-		
-		<div class="col-12">
-			<br>
+			<div class="col-md-2">
+				<input type="text" class="form-control" name="user_country" id="user_country" placeholder="縣市(ex.台北市)" value="<?php echo $_smarty_tpl->tpl_vars['user']->value['user_country'];?>
+">
+			</div>
+			<div class="col-md-2">
+				<input type="text" class="form-control" name="user_district" id="user_district" placeholder="區(ex.信義區)" value="<?php echo $_smarty_tpl->tpl_vars['user']->value['user_district'];?>
+">
+			</div>
+		<div class="col-md-4">
+			<input type="text" class="form-control" name="user_address" id="user_address" placeholder="please enter address" value="<?php echo $_smarty_tpl->tpl_vars['user']->value['user_address'];?>
+">
+		</div>
+	
+		<?php if ($_smarty_tpl->tpl_vars['user']->value['user_sn'] == '') {?>
+			<label class="col-2" for="user_id">CAPTCHA:</label>
+			<div class="col-2">
+				<img src="pic.php" alt="請輸入驗證碼">
+			</div>
+			<div class="col-2">
+				<input type="text" class="form-control validate[required]" name="key" placeholder="Enter number">
+			</div>
+		<?php } else { ?>
+			<div class="col-6"></div>
+		<?php }?>	
+		<div class="col-5">
 			<?php if ($_smarty_tpl->tpl_vars['user']->value['user_sn'] > 0) {?>
-			<input type="hidden" name="op" value="update_user">
-			<input type="hidden" name="user_sn" value="<?php echo $_smarty_tpl->tpl_vars['user']->value['user_sn'];?>
+				<input type="hidden" name="op" value="update_user">
+				<input type="hidden" name="user_sn" value="<?php echo $_smarty_tpl->tpl_vars['user']->value['user_sn'];?>
 ">
 			<?php } else { ?>
-			<input type="hidden" name="op" value="insert_user">
+				<input type="hidden" name="op" value="insert_user">
 			<?php }?>
-			<button type="submit" class="btn btn-outline-info">Save</button>
 		</div>
-
+		<div class="col-1">
+		<button type="submit" class="btn btn-outline-info">Save</button>
+		</div>
 	</div>
-
 </form>
 <?php }
 }

@@ -54,41 +54,41 @@
 		</div>
 
 		
-			<label class="col-md-2 control-label">Address:</label>
-				<div class="col-md-2">
-					<input type="text" class="form-control" name="user_zip" id="user_zip" placeholder="zip(ex.110)" value="{$user.user_zip}">
-				</div>
-				<div class="col-md-2">
-					<input type="text" class="form-control" name="user_country" id="user_country" placeholder="縣市(ex.台北市)" value="{$user.user_country}">
-				</div>
-				<div class="col-md-2">
-					<input type="text" class="form-control" name="user_district" id="user_district" placeholder="區(ex.信義區)" value="{$user.user_district}">
-				</div>
-			<div class="col-md-4">
-				<input type="text" class="form-control" name="user_address" id="user_address" placeholder="please enter address" value="{$user.user_address}">
-			</div>
-		
-	<div class="col-12">
-			<br>
-			{if $user.user_sn==''}
-			<label class="col-2 control-label" for="user_id">驗證:</label>
+		<label class="col-md-2 control-label">Address:</label>
 			<div class="col-md-2">
+				<input type="text" class="form-control" name="user_zip" id="user_zip" placeholder="zip(ex.110)" value="{$user.user_zip}">
+			</div>
+			<div class="col-md-2">
+				<input type="text" class="form-control" name="user_country" id="user_country" placeholder="縣市(ex.台北市)" value="{$user.user_country}">
+			</div>
+			<div class="col-md-2">
+				<input type="text" class="form-control" name="user_district" id="user_district" placeholder="區(ex.信義區)" value="{$user.user_district}">
+			</div>
+		<div class="col-md-4">
+			<input type="text" class="form-control" name="user_address" id="user_address" placeholder="please enter address" value="{$user.user_address}">
+		</div>
+	
+		{if $user.user_sn==''}
+			<label class="col-2" for="user_id">CAPTCHA:</label>
+			<div class="col-2">
 				<img src="pic.php" alt="請輸入驗證碼">
 			</div>
 			<div class="col-2">
-				<input type="text" class="form-control validate[required]" name="key" placeholder="請輸入驗證碼">
+				<input type="text" class="form-control validate[required]" name="key" placeholder="Enter number">
 			</div>
-			{else}
+		{else}
 			<div class="col-6"></div>
-			{/if}
-			<div class="col-md-6">
+		{/if}	
+		<div class="col-5">
 			{if $user.user_sn>0}
-			<input type="hidden" name="op" value="update_user">
-			<input type="hidden" name="user_sn" value="{$user.user_sn}">
+				<input type="hidden" name="op" value="update_user">
+				<input type="hidden" name="user_sn" value="{$user.user_sn}">
 			{else}
-			<input type="hidden" name="op" value="insert_user">
+				<input type="hidden" name="op" value="insert_user">
 			{/if}
-			<button type="submit" class="btn btn-outline-info">Save</button>
+		</div>
+		<div class="col-1">
+		<button type="submit" class="btn btn-outline-info">Save</button>
 		</div>
 	</div>
 </form>

@@ -1,8 +1,14 @@
-<div class="card-header">Login</div>
+<div class="card text-dark bg-light">
+{if $isUser}
+	<div class="card-header">Menu</div>
+{else}
+	<div class="card-header">Login</div>
+{/if}
 <div class="card-body">
 	{if $isUser}
 		{include file='side_tool.html'}
 	{else}
 		{include file='side_login.html'}
 	{/if}
+</div>
 </div>

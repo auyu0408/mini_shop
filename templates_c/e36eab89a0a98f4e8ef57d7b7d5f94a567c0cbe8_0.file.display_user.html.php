@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-06-29 09:03:28
+/* Smarty version 3.1.39, created on 2021-06-29 16:26:46
   from '/usr/share/nginx/html/mini_shop/templates/display_user.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_60da7160dde543_91760057',
+  'unifunc' => 'content_60dad946402be2_59141916',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'e36eab89a0a98f4e8ef57d7b7d5f94a567c0cbe8' => 
     array (
       0 => '/usr/share/nginx/html/mini_shop/templates/display_user.html',
-      1 => 1624928595,
+      1 => 1624929439,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_60da7160dde543_91760057 (Smarty_Internal_Template $_smarty_tpl) {
+function content_60dad946402be2_59141916 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <div class="row">
 	<?php if ($_smarty_tpl->tpl_vars['isAdmin']->value) {?>

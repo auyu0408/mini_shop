@@ -88,6 +88,11 @@ function insert_user()
 	{
 		$$var_name = $mysqli->real_escape_string($var_val);
 	}
+
+	if($key != $_SESSION['key'])
+	{
+		die("CAPTCHA wrong, pleaise reenter it.");
+	}
 	$user_passwd = password_hash($_POST['user_passwd'], PASSWORD_DEFAULT);
 
 	$sql = "insert into users(user_name, user_id, user_passwd, user_email, user_sex, user_tel, user_zip, user_country, user_district, user_address) values('{$user_name}','{$user_id}','{$user_passwd}','{$user_email}','{$user_sex}','{$user_tel}','{$user_zip}','{$user_country}','{$user_district}','{$user_address}')";
