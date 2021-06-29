@@ -20,6 +20,9 @@
 			</div>
 			<div id="shop_main" class="row">
 				<div class="col-9">
+					{if isset($msg)}
+					<div class="alert alert-danger">{$msg}</div>
+					{/if}
 					{if $op=="goods_form"}
 						{include file ="goods_form.html"}
 					{else if $op=="goods_display"}

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-06-29 16:18:25
+/* Smarty version 3.1.39, created on 2021-06-29 21:10:50
   from '/usr/share/nginx/html/mini_shop/templates/user_form.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_60dad751c6c0f3_54477317',
+  'unifunc' => 'content_60db1bda302bd3_48468873',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'd76844a06ab2bdd0e70911e2fa91f4b4f2a5e671' => 
     array (
       0 => '/usr/share/nginx/html/mini_shop/templates/user_form.html',
-      1 => 1624954698,
+      1 => 1624955407,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_60dad751c6c0f3_54477317 (Smarty_Internal_Template $_smarty_tpl) {
+function content_60db1bda302bd3_48468873 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <h1>Sign up</h1>
 

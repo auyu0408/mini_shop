@@ -1,0 +1,7 @@
+<h2>My shopping list</h2>
+<form action="bill.php" method="post" class="form-horizontal">
+	{foreach from=$cart_arr key=$goods_sn item=$goods}
+		<div class="form-group">
+			<label class="col-4 control-label" for="goods_amount">{$goods.goods_title}</label>
+			<div class="col-1">
+				<input type="text" class="form-control" name="goods_amount[{$goods_sn}]" id="goods_amount_{$goods_sn}" placeholder="商品數量" value="{$goods.goods_amount}">

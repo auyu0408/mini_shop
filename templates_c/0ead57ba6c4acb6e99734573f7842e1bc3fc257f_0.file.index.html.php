@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-06-26 15:13:00
+/* Smarty version 3.1.39, created on 2021-06-29 21:09:59
   from '/usr/share/nginx/html/mini_shop/templates/index.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_60d6d37c7349d7_99455034',
+  'unifunc' => 'content_60db1ba7117140_93644450',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '0ead57ba6c4acb6e99734573f7842e1bc3fc257f' => 
     array (
       0 => '/usr/share/nginx/html/mini_shop/templates/index.html',
-      1 => 1624691523,
+      1 => 1624971309,
       2 => 'file',
     ),
   ),
@@ -26,7 +26,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:index_side.html' => 1,
   ),
 ),false)) {
-function content_60d6d37c7349d7_99455034 (Smarty_Internal_Template $_smarty_tpl) {
+function content_60db1ba7117140_93644450 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="zh-Hant">
 	<head>
@@ -53,6 +53,10 @@ function content_60d6d37c7349d7_99455034 (Smarty_Internal_Template $_smarty_tpl)
 			</div>
 			<div id="shop_main" class="row">
 				<div class="col-9">
+					<?php if ((isset($_smarty_tpl->tpl_vars['msg']->value))) {?>
+					<div class="alert alert-danger"><?php echo $_smarty_tpl->tpl_vars['msg']->value;?>
+</div>
+					<?php }?>
 					<?php if ($_smarty_tpl->tpl_vars['op']->value == "goods_form") {?>
 						<?php $_smarty_tpl->_subTemplateRender("file:goods_form.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
