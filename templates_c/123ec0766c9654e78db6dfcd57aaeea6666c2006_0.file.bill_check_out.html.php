@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-06-30 17:29:03
+/* Smarty version 3.1.39, created on 2021-06-30 20:59:25
   from '/usr/share/nginx/html/mini_shop/templates/bill_check_out.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_60dc395fdeb5e4_73486991',
+  'unifunc' => 'content_60dc6aadcd8b65_27929725',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '123ec0766c9654e78db6dfcd57aaeea6666c2006' => 
     array (
       0 => '/usr/share/nginx/html/mini_shop/templates/bill_check_out.html',
-      1 => 1625045322,
+      1 => 1625052741,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_60dc395fdeb5e4_73486991 (Smarty_Internal_Template $_smarty_tpl) {
+function content_60dc6aadcd8b65_27929725 (Smarty_Internal_Template $_smarty_tpl) {
 ?><h2 class="text-center">My shopping list</h2>
 	<?php echo '<script'; ?>
  type="text/javascript">

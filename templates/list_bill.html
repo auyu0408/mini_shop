@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<div class="row">
+	{if $isAdmin}
+	<div class="col-2">
+		<select size=10 class="form-control" onChange="location.href='bill.php?user_sn='+this.value">
+			{foreach from=$all_users item=mem}
+			<option value="{$mem.user_sn}"{if $now_user_sn == $mem.user_sn}selected{/if}>{$mem.user_name}</option>
+			{/foreach}
+		</select>
+	</div>
+	{/if}
+	<div class="col-10">
+		<ul class="list-group">
+			{foreach from=$bill_arr item=bill}
+			<a href="bill.php?op=display_bill&bill_sn={$bill.bill_sn}" class="list-group-item list-group-item-light list-group-item-action">{$bill.bill_date}</a>
+			{if $bill.bill_status}<span class="label label-success">{$bill.bill_status}</span>{/if}
+			{/foreach}
+		</ul>
+	</div>
+</div>

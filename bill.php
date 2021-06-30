@@ -9,8 +9,7 @@ if(!$isUser)
 //control
 $op = isset($_REQUEST['op'])?my_filter($_REQUEST['op'], "string") :'';
 $bill_sn = isset($_REQUEST['bill_sn'])?my_filter($_REQUEST['bill_sn'], "int") : 0;
-//echo $op;
-
+$user_sn = isset($_REQUEST['user_sn'])?my_filter($_REQUEST['user_sn'], "int") : 0;
 switch($op)
 {
 case 'check_out':
@@ -33,10 +32,16 @@ case 'delete_bill':
 	exit;
 	break;
 
+case 'finish_bill':
+	finish_bill($bill_sn);
+	header("location:bill.php?op=display_bill&bill_sn={$bill_sn}");
+	exit;
+	break;
+
 case 'list_bill':
 default:
 	$op = "list_bill";
-	list_bill();
+	list_bill($user_sn);
 	break;
 }
 //output
@@ -66,16 +71,16 @@ function check_out()
 function save_bill()
 {
 	global $mysqli;
-	$bill_total = intval($_POST['bill_total']);
+	$bill_total = intval($_REQUEST['bill_total']);
 	$now = date("Y-m-d H:i:s");
 
 	$sql = "insert into bill(user_sn, bill_total, bill_date) values('{$_SESSION['user_sn']}', '{$bill_total}', '{$now}')";
 	$mysqli->query($sql) or die($mysqli->connect_error);
 	$bill_sn = $mysqli->insert_id;
 
-	foreach($_POST['goods_amount'] as $goods_sn => $goods_amount)
+	foreach($_REQUEST['goods_amount'] as $goods_sn => $goods_amount)
 	{
-		$goods_total = intval($_POST['goods_total'][$goods_sn]);
+		$goods_total = intval($_REQUEST['goods_total'][$goods_sn]);
 		$sql = "insert into bill_detail(bill_sn, goods_sn, goods_amount, goods_total) values('{$bill_sn}', '{$goods_sn}', '{$goods_amount}', '{$goods_total}')";
 		$mysqli->query($sql) or die($mysqli->connect_error);
 		setcookie("cart[$goods_sn][goods_amount]", "", time()-3600);
@@ -93,7 +98,7 @@ function display_bill($bill_sn)
 	$bill = $result->fetch_assoc();
 	$smarty->assign('bill',$bill);
 
-	$sql = "select a.*,b.* from bill_detail as a left join goods as b on a.goods_sn=b.goods_an where a.bill_sn='{$$bill_sn}'";
+	$sql = "select a.*,b.* from bill_detail as a left join goods as b on a.goods_sn=b.goods_sn where a.bill_sn='{$bill_sn}'";
 	$result = $mysqli->query($sql) or die($mysqli->connect_error);
 	while($all = $result->fetch_assoc()){
 		$bill_detail[] = $all;
@@ -105,12 +110,54 @@ function display_bill($bill_sn)
 //delete
 function delete_bill($bill_sn)
 {
+	global $mysqli, $isAdmin;
 
+	if(!$isAdmin)
+	{
+		return;
+	}
+	$sql = "delete from bill_detail where bill_sn='{$bill_sn}'";
+	$mysqli->query($sql) or die($mysql->connect_error);
+	$sql = "delete from bill where bill_sn='{$bill_sn}'";
+	$mysqli->query($sql) or die($mysql->connect_error);
+}
+
+//Done the order
+function finish_bill($bill_sn="")
+{
+	global $smarty, $mysqli, $isAdmin;
+	if(!$isAdmin){
+		return;
+	}
+	$sql = "update bill set bill_status='Done' where bill_sn='{$bill_sn}'";
+	$mysqli->query($sql) or die($mysqli->connect_error);
 }
 
 //list
-//function list_bill()\
+function list_bill($user_sn = "")
 {
+	global $smarty, $mysqli, $isAdmin;
+	if(empty($user_sn))
+	{
+		$user_sn = $_SESSION['user_sn'];
+	}
+	$user_sn = $isAdmin ? $user_sn : $_SESSION['user_sn'];
+	echo $user_sn;
+	$sql = "select * from bill where user_sn='{$user_sn}' order by bill_date desc";
+	$result = $mysqli->query($sql) or die($mysqli->connect_error);
+	while($all = $result->fetch_assoc()){
+		$bill_arr[] = $all;
+	}
+	$smarty->assign('bill_arr', $bill_arr);
 
+	$all_users = '';
+	if($isAdmin)
+	{
+		$sql = "select * from users";
+		$result = $mysqli->query($sql) or die($mysqli->connect_error);
+		$all_users = $result->fetch_all(MYSQLI_ASSOC);
+	}
+	$smarty->assign('all_users', $all_users);
+	$smarty->assign('now_user_sn', $user_sn);
 }
 ?>

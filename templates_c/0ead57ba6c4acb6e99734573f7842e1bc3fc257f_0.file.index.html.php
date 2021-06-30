@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-06-30 17:19:05
+/* Smarty version 3.1.39, created on 2021-06-30 20:09:04
   from '/usr/share/nginx/html/mini_shop/templates/index.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_60dc37094e3f38_39753831',
+  'unifunc' => 'content_60dc5ee07d1b48_46374731',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '0ead57ba6c4acb6e99734573f7842e1bc3fc257f' => 
     array (
       0 => '/usr/share/nginx/html/mini_shop/templates/index.html',
-      1 => 1625044686,
+      1 => 1625054869,
       2 => 'file',
     ),
   ),
@@ -24,11 +24,12 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:display_user.html' => 1,
     'file:bill_check_out.html' => 1,
     'file:display_bill.html' => 1,
+    'file:list_bill.html' => 1,
     'file:goods_list.html' => 1,
     'file:index_side.html' => 1,
   ),
 ),false)) {
-function content_60dc37094e3f38_39753831 (Smarty_Internal_Template $_smarty_tpl) {
+function content_60dc5ee07d1b48_46374731 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="zh-Hant">
 	<head>
@@ -79,6 +80,9 @@ function content_60dc37094e3f38_39753831 (Smarty_Internal_Template $_smarty_tpl)
 ?>
 					<?php } elseif ($_smarty_tpl->tpl_vars['op']->value == 'display_bill') {?>
 		 				<?php $_smarty_tpl->_subTemplateRender('file:display_bill.html', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+?>
+					<?php } elseif ($_smarty_tpl->tpl_vars['op']->value == 'list_bill') {?>
+						<?php $_smarty_tpl->_subTemplateRender('file:list_bill.html', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 					<?php } else { ?>
 						<?php $_smarty_tpl->_subTemplateRender('file:goods_list.html', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
