@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-06-29 21:09:59
+/* Smarty version 3.1.39, created on 2021-06-30 17:19:05
   from '/usr/share/nginx/html/mini_shop/templates/index.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_60db1ba7117140_93644450',
+  'unifunc' => 'content_60dc37094e3f38_39753831',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '0ead57ba6c4acb6e99734573f7842e1bc3fc257f' => 
     array (
       0 => '/usr/share/nginx/html/mini_shop/templates/index.html',
-      1 => 1624971309,
+      1 => 1625044686,
       2 => 'file',
     ),
   ),
@@ -22,11 +22,13 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:goods_display.html' => 1,
     'file:user_form.html' => 1,
     'file:display_user.html' => 1,
+    'file:bill_check_out.html' => 1,
+    'file:display_bill.html' => 1,
     'file:goods_list.html' => 1,
     'file:index_side.html' => 1,
   ),
 ),false)) {
-function content_60db1ba7117140_93644450 (Smarty_Internal_Template $_smarty_tpl) {
+function content_60dc37094e3f38_39753831 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="zh-Hant">
 	<head>
@@ -41,6 +43,9 @@ function content_60db1ba7117140_93644450 (Smarty_Internal_Template $_smarty_tpl)
  src="vendor/bootstrap/js/bootstrap.min.js"><?php echo '</script'; ?>
 >
 		<link href="style.css" rel="stylesheet">
+		<?php echo '<script'; ?>
+ src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"><?php echo '</script'; ?>
+>
 	</head>
 	<body>
 		<div class="container">
@@ -68,6 +73,12 @@ function content_60db1ba7117140_93644450 (Smarty_Internal_Template $_smarty_tpl)
 ?>
 					<?php } elseif ($_smarty_tpl->tpl_vars['op']->value == "display_user") {?>
 						<?php $_smarty_tpl->_subTemplateRender("file:display_user.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+?>
+					<?php } elseif ($_smarty_tpl->tpl_vars['op']->value == "check_out") {?>
+						<?php $_smarty_tpl->_subTemplateRender('file:bill_check_out.html', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+?>
+					<?php } elseif ($_smarty_tpl->tpl_vars['op']->value == 'display_bill') {?>
+		 				<?php $_smarty_tpl->_subTemplateRender('file:display_bill.html', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 					<?php } else { ?>
 						<?php $_smarty_tpl->_subTemplateRender('file:goods_list.html', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);

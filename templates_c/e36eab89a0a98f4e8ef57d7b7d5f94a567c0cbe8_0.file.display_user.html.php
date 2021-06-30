@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-06-29 16:26:46
+/* Smarty version 3.1.39, created on 2021-06-30 13:45:03
   from '/usr/share/nginx/html/mini_shop/templates/display_user.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_60dad946402be2_59141916',
+  'unifunc' => 'content_60dc04df006430_86608075',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'e36eab89a0a98f4e8ef57d7b7d5f94a567c0cbe8' => 
     array (
       0 => '/usr/share/nginx/html/mini_shop/templates/display_user.html',
-      1 => 1624929439,
+      1 => 1625031892,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_60dad946402be2_59141916 (Smarty_Internal_Template $_smarty_tpl) {
+function content_60dc04df006430_86608075 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <div class="row">
 	<?php if ($_smarty_tpl->tpl_vars['isAdmin']->value) {?>
@@ -42,7 +42,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 	</div>
 	<?php }?>	
 	<div class="col-10">
-		<h1>Profile</h1>
+		<h1 class="text-center">Profile</h1>
 		<table class="table table-warning table-hover table-responsive">
 		<tr>
 			<td>Name:</td><td><?php echo $_smarty_tpl->tpl_vars['user']->value['user_name'];?>

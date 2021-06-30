@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-{$cart.44.goods_title}
 <form action="bill.php" method="post" class="form-horizontal" role="form">
 	<div class="card broder-info">
 		<div class="card-header">Shopping list</div>
@@ -7,10 +6,10 @@
 			{foreach from=$cart key=goods_sn item=goods}
 				<tr>
 					<td>
-						<a href="index.php?=goods_sn={$goods_sn}">{$goods.goods_title}</a>
+						<a href="index.php?goods_sn={$goods_sn}">{$goods.goods_title}</a>
 					</td>
 					<td>
-						<input type="text" name="goods_amount[{$goods_sn}]" value="{$goods.goods_amount}" class="form-control" style="max-width:40px">
+						<input type="text" name="goods_amount[{$goods_sn}]" value="{$goods.goods_amount}" class="form-control" style="width:40px">
 					</td>
 				</tr>
 			{/foreach}

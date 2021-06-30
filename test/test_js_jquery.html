@@ -1,0 +1,28 @@
+<h2>My shopping list</h2>
+<script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
+	<script type="text/javascript">
+		function change_total(goods_sn,value,price){
+			var total=value*price;
+			$("#total_" + goods_sn).html(total);
+			$("#goods_total_" + goods_sn).val(total);
+
+			var sum=0;
+			$('.price').each(function(){
+				sum += Number($(this).val());
+			});
+			$("#bill_total_display").html(sum);
+			$("#bill_total").val(sum);
+		}
+	</script>
+<form action="test.html" method="get">
+	<label for="goods_amount">TestTitle</label>
+	<input text="text" name="goods_amount[44]" id="goods_amount_44" placeholder="# of product" value="1" onchange="change_total(44,this.value,420)">
+	<p>x 420</p>
+	<p id="total_44">420</p>
+	<input type="hidden" name="goods_total[44]" class="price" id="goods_total_44" value="420">
+	<hr>
+	<p id="bill_total_display">420</p>
+	<input type="hidden" class="form-control" name="bill_total" id="bill_total" placeholder="Total" value="{$bill_total}">
+	<button type="submit" class="btn btn-danger">Submit</button>
+</form>
+

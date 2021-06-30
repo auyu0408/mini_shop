@@ -1,7 +1,44 @@
-<h2>My shopping list</h2>
+<h2 class="text-center">My shopping list</h2>
+	<script type="text/javascript">
+		function check_total(goods_sn,amount,price){
+			var total=amount*price;
+			$("#total_"+goods_sn).html(total+" NTD");
+			$("#goods_total_"+goods_sn).val(total);
+
+			var sum=0;
+			$('.price').each(function(){
+				sum += Number($(this).val());
+			});
+			$("#bill_total_display").html(sum+" NTD");
+			$("#bill_total").val(sum);
+		}
+	</script>
 <form action="bill.php" method="post" class="form-horizontal">
-	{foreach from=$cart_arr key=$goods_sn item=$goods}
-		<div class="form-group">
-			<label class="col-4 control-label" for="goods_amount">{$goods.goods_title}</label>
-			<div class="col-1">
-				<input type="text" class="form-control" name="goods_amount[{$goods_sn}]" id="goods_amount_{$goods_sn}" placeholder="商品數量" value="{$goods.goods_amount}">
+	{foreach from=$cart_arr key=goods_sn item=goods}
+	<div class="row">
+		<label class="col-4 control-label text-center fs-5" for="goods_amount">{$goods.goods_title}</label>
+		<div class="col-1">
+			<input text="text" class="form-control" name="goods_amount[{$goods_sn}]" id="goods_amount_{$goods_sn}" placeholder="# of product" value="{$goods.goods_amount}" onchange="check_total('{$goods_sn}',this.value,'{$goods.goods_price}')">
+		</div>
+		<div class="col-2 text-center">
+			<p class="form-control-static">x {$goods.goods_price} NTD</p>
+		</div>
+		<div class="col-2 text-center">
+			<p class="form-control-static" id="total_{$goods_sn}">{$goods.goods_total} NTD</p>
+			<input type="hidden" name="goods_total[{$goods_sn}]" class="price" id="goods_total_{$goods_sn}" value="{$goods.goods_total}">
+		</div>
+	</div>
+	{/foreach}
+	<hr>
+	<div class="row">
+		<div class="col-4 text-center">Total:</div>
+		<div class="col-8 text-center">
+			<p class="form-control-static" id="bill_total_display">{$bill_total} NTD</p>
+			<input type="hidden" class="form-control" name="bill_total" id="bill_total" placeholder="Total" value="{$bill_total}">
+		</div>
+	</div>
+	<div class="text-center">
+		<input type="hidden" name="op" value="save_bill">
+		<button type="submit" class="btn btn-danger">Submit</button>
+	</div>
+</form>

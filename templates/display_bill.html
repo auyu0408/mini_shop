@@ -1,0 +1,26 @@
+<h2>{$bill.bill_date}訂購細目</h2>
+<div>收貨人:{$bill.user_name}{$bill.user_sex}</div>
+<div>收貨地址:{$bill.user_zip}{$bill.user_country}{$bill.user_district}{$bill.user_address}</div>
+<div>收貨電話:{$bill.user_tel}</div>
+<table class="tablei table-striped table-hover">
+	<tr>
+		<th>商品名稱</th>
+		<th>單價</th>
+		<th>數量</th>
+		<th style="text-align: right;">小計</th>
+	</tr>
+	{foreach from=$bill_detail item=bill}
+	<tr>
+		<td>{$bill.goods_title}</td>
+		<td>{$bill.goods_price}</td>
+		<td>{$bill.goods_amount}</td>
+		<td style="text-align: right;">{$bill.goods_total} NTD</td>
+	</tr>
+	{/foreach}
+	<tr>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td style="text-align: right;">{$bill.bill_total} NTD</td>
+	</tr>
+</table>
