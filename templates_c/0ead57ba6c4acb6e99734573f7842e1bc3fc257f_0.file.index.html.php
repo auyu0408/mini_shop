@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-06-30 20:09:04
+/* Smarty version 3.1.39, created on 2021-07-01 16:45:09
   from '/usr/share/nginx/html/mini_shop/templates/index.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_60dc5ee07d1b48_46374731',
+  'unifunc' => 'content_60dd80958fc551_33206490',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '0ead57ba6c4acb6e99734573f7842e1bc3fc257f' => 
     array (
       0 => '/usr/share/nginx/html/mini_shop/templates/index.html',
-      1 => 1625054869,
+      1 => 1625129096,
       2 => 'file',
     ),
   ),
@@ -29,7 +29,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:index_side.html' => 1,
   ),
 ),false)) {
-function content_60dc5ee07d1b48_46374731 (Smarty_Internal_Template $_smarty_tpl) {
+function content_60dd80958fc551_33206490 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="zh-Hant">
 	<head>
@@ -37,13 +37,21 @@ function content_60dc5ee07d1b48_46374731 (Smarty_Internal_Template $_smarty_tpl)
 		<meta http-equiv="X-UA-Compatable" content="IE=edge">
 		<!--上面主要是IE在用啦，但IE都要掰掰了-->
 		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+		<link href="jquery/jquery-ui.css" rel="stylesheet">
+		<link href="style.css" rel="stylesheet">
+
 		<title><?php echo $_smarty_tpl->tpl_vars['shop_name']->value;?>
 </title>
-		<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+		<?php echo '<script'; ?>
+ src="jquery/external/jquery/jquery.js"><?php echo '</script'; ?>
+>
+		<?php echo '<script'; ?>
+ src="jquery/jquery-ui.js"><?php echo '</script'; ?>
+>
 		<?php echo '<script'; ?>
  src="vendor/bootstrap/js/bootstrap.min.js"><?php echo '</script'; ?>
 >
-		<link href="style.css" rel="stylesheet">
 		<?php echo '<script'; ?>
  src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"><?php echo '</script'; ?>
 >

@@ -1,25 +1,17 @@
 <!DOCTYPE html>
 <h1>Sign up</h1>
 
-<!--
-	<script language="javascript" src="vendor/jquery.twzipcode.min.js"></script>
-	<script type="text/javascript">
-		$(document).ready(function(){
-			$("#twzipcode").twzipcode();
-		});
-	</script>
+<script type="javascript">
+	$(document).ready(function(){
+		$('#user_form').validationEngine();
+	});
+</script>
 
-	<div id="twzipcode">
-  		<div data-role="county" data-style="Style Name" data-value="110"></div>
-  		<div data-role="district" data-style="Style Name" data-value="臺北市"></div>
-  		<div data-role="zipcode" data-style="Style Name" data-value="信義區"></div>
-	</div>
--->
-<form action="user.php" method="post" class="form-horizontal">
+<form action="user.php" id="user_form" method="post" class="form-horizontal">
 	<div class="row g-3">
 		<div class="col-md-6">
 			<label for="user_name">Name:</label>
-			<input type="text" class="form-control" name="user_name" id="user_name" placeholder="please enter your name" value="{$user.user_name}">
+			<input type="text" class="form-control" name="user_name" id="user_name" placeholder="enter your name" value="{$user.user_name}">
 		</div>
 	
 		<div class="col-md-6">
@@ -55,15 +47,15 @@
 
 		
 		<label class="col-md-2 control-label">Address:</label>
-			<div class="col-md-2">
-				<input type="text" class="form-control" name="user_zip" id="user_zip" placeholder="zip(ex.110)" value="{$user.user_zip}">
-			</div>
-			<div class="col-md-2">
-				<input type="text" class="form-control" name="user_country" id="user_country" placeholder="縣市(ex.台北市)" value="{$user.user_country}">
-			</div>
-			<div class="col-md-2">
-				<input type="text" class="form-control" name="user_district" id="user_district" placeholder="區(ex.信義區)" value="{$user.user_district}">
-			</div>
+		<div class="col-md-2">
+			<input type="text" class="form-control" name="user_zip" id="user_zip" placeholder="ex.110" value="{$user.user_zip}">
+		</div>
+		<div class="col-md-2">
+			<input type="text" class="form-control" name="user_country" id="user_country" placeholder="ex.台北市" value="{$user.user_country}">
+		</div>
+		<div class="col-md-2">
+			<input type="text" class="form-control" name="user_district" id="user_district" placeholder="ex.信義區" value="{$user.user_district}">
+		</div>
 		<div class="col-md-4">
 			<input type="text" class="form-control" name="user_address" id="user_address" placeholder="please enter address" value="{$user.user_address}">
 		</div>
