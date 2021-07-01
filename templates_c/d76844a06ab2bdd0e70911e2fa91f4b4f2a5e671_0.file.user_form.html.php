@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-07-01 17:22:54
+/* Smarty version 3.1.39, created on 2021-07-01 22:06:13
   from '/usr/share/nginx/html/mini_shop/templates/user_form.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_60dd896e6069c3_98830681',
+  'unifunc' => 'content_60ddcbd5b5d789_72021284',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'd76844a06ab2bdd0e70911e2fa91f4b4f2a5e671' => 
     array (
       0 => '/usr/share/nginx/html/mini_shop/templates/user_form.html',
-      1 => 1625131372,
+      1 => 1625131831,
       2 => 'file',
     ),
   ),
@@ -20,18 +20,9 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_60dd896e6069c3_98830681 (Smarty_Internal_Template $_smarty_tpl) {
+function content_60ddcbd5b5d789_72021284 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <h1>Sign up</h1>
-
-<?php echo '<script'; ?>
- src="vendor/jQuery-Validation-Engine/js/languages/jquery.validationEngine-zh_TW.js" type="text/javascript" charset="utf-8"><?php echo '</script'; ?>
->
-<?php echo '<script'; ?>
- src="vendor/jQuery-Validation-Engine/js/jquery.validationEngine.js" type="text/javascript" charset="utf-8"><?php echo '</script'; ?>
->
-<link rel="stylesheet" href="vendor/jQuery-Validation-Engine/css/validationEngine.jquery.css" type="text/css"/>
-
 
 <?php echo '<script'; ?>
  type="javascript">
@@ -45,7 +36,7 @@ function content_60dd896e6069c3_98830681 (Smarty_Internal_Template $_smarty_tpl)
 	<div class="row g-3">
 		<div class="col-md-6">
 			<label for="user_name">Name:</label>
-			<input type="text" class="form-control validate[required]" name="user_name" id="user_name" placeholder="enter your name" value="<?php echo $_smarty_tpl->tpl_vars['user']->value['user_name'];?>
+			<input type="text" class="form-control" name="user_name" id="user_name" placeholder="enter your name" value="<?php echo $_smarty_tpl->tpl_vars['user']->value['user_name'];?>
 ">
 		</div>
 	
@@ -73,7 +64,7 @@ function content_60dd896e6069c3_98830681 (Smarty_Internal_Template $_smarty_tpl)
 
 		<div class="col-md-6">
 			<label for="user_email">Email:</label>
-			<input type="text" class="form-control validate[required,custom[email]]" name="user_email" id="user_email" placeholder="please enter you email" value="<?php echo $_smarty_tpl->tpl_vars['user']->value['user_email'];?>
+			<input type="text" class="form-control" name="user_email" id="user_email" placeholder="please enter you email" value="<?php echo $_smarty_tpl->tpl_vars['user']->value['user_email'];?>
 ">
 		</div>
 
