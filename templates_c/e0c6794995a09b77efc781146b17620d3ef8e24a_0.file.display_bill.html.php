@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-06-30 21:45:46
+/* Smarty version 3.1.39, created on 2021-07-02 18:09:43
   from '/usr/share/nginx/html/mini_shop/templates/display_bill.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_60dc758ad4fdb9_28675458',
+  'unifunc' => 'content_60dee5e76f1a76_15164454',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'e0c6794995a09b77efc781146b17620d3ef8e24a' => 
     array (
       0 => '/usr/share/nginx/html/mini_shop/templates/display_bill.html',
-      1 => 1625060740,
+      1 => 1625220579,
       2 => 'file',
     ),
   ),
@@ -20,12 +20,12 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_60dc758ad4fdb9_28675458 (Smarty_Internal_Template $_smarty_tpl) {
+function content_60dee5e76f1a76_15164454 (Smarty_Internal_Template $_smarty_tpl) {
 ?><h3 class="text-center"><?php echo $_smarty_tpl->tpl_vars['bill']->value['bill_date'];?>
 訂購細目-<?php echo $_smarty_tpl->tpl_vars['bill']->value['bill_status'];?>
 </h3>
-<div>收貨人:<?php echo $_smarty_tpl->tpl_vars['bill']->value['user_name'];?>
-</div>
+<div>收貨人:<?php echo $_smarty_tpl->tpl_vars['bill']->value['user_name'];
+if ($_smarty_tpl->tpl_vars['bill']->value['user_sex'] == 1) {?>先生<?php } else { ?>小姐<?php }?></div>
 <div>收貨地址:<?php echo $_smarty_tpl->tpl_vars['bill']->value['user_zip'];
 echo $_smarty_tpl->tpl_vars['bill']->value['user_country'];
 echo $_smarty_tpl->tpl_vars['bill']->value['user_district'];
@@ -67,7 +67,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
  NTD</td>
 	</tr>
 </table>
-<?php if ($_smarty_tpl->tpl_vars['isAdmin']->value && $_smarty_tpl->tpl_vars['bill']->value['bill_status'] == '') {?>
+<?php if ($_smarty_tpl->tpl_vars['isAdmin']->value && $_smarty_tpl->tpl_vars['bill']->value['bill_status'] != "Done") {?>
 	<?php echo '<script'; ?>
  src="vendor/bootstrap-sweetalert/sweetalert.min.js"><?php echo '</script'; ?>
 ><?php echo '</script'; ?>

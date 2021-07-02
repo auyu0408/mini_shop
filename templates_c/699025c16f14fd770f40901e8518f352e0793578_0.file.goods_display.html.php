@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-06-29 19:20:57
+/* Smarty version 3.1.39, created on 2021-07-02 17:49:00
   from '/usr/share/nginx/html/mini_shop/templates/goods_display.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_60db0219b1f606_26289387',
+  'unifunc' => 'content_60dee10ce58328_06648260',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '699025c16f14fd770f40901e8518f352e0793578' => 
     array (
       0 => '/usr/share/nginx/html/mini_shop/templates/goods_display.html',
-      1 => 1624957214,
+      1 => 1625218808,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_60db0219b1f606_26289387 (Smarty_Internal_Template $_smarty_tpl) {
+function content_60dee10ce58328_06648260 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <div class="row">
 	<div class="col-md-6">
@@ -57,13 +57,13 @@ NTD</p>
 				<button class="nav-link active" id="goods-tab" data-bs-toggle="tab" data-bs-target="#goods" type="button" role="tab" aria-controls="goods" aria-selected="true">Introduction</button>
 			</li>
 			<li class="nav-item" role="presentation">
-				<button class="nav-link" id="note-tab" data-bs-toggle="tab" data-bs-target="#note" type="button" role="tab" aria-controls="note" aria-selected="false">Notice</button>
+				<button class="nav-link" id="note-tab" data-bs-toggle="tab" data-bs-target="#note" type="button" role="tab" aria-controls="note" aria-selected="false">Lyrics</button>
 			</li>
 			<li role="nav-item" role="presentation">
-				<button class="nav-link" id="service-tab" data-bs-toggle="tab" data-bs-target="#service" type="button" role="tab" aria-controls="goods" aria-selected="false">Service</button>
+				<button class="nav-link" id="service-tab" data-bs-toggle="tab" data-bs-target="#service" type="button" role="tab" aria-controls="goods" aria-selected="false">Video</button>
 			</li>
 			<li role="nav-item" role="presentation">
-				<button class="nav-link" id="special-tab" data-bs-toggle="tab" data-bs-target="#special" type="button" role="tab" aria-controls="goods" aria-selected="false">Special</button>
+				<button class="nav-link" id="special-tab" data-bs-toggle="tab" data-bs-target="#special" type="button" role="tab" aria-controls="goods" aria-selected="false">Credit</button>
 			</li>
 		</ul>
 		<div class="tab-content">
@@ -72,13 +72,17 @@ NTD</p>
 </p>
 			</div>
 			<div class="tab-pane fade" id="note" role="tabpanel" aria-laballedy="note-tab">
-				Notice Test
+				<p><?php echo $_smarty_tpl->tpl_vars['goods']->value['goods_notice'];?>
+</p>
 			</div>
 			<div class="tab-pane fade" id="service" role="tabpanel" aria-laballedy="special-tab">
-				Service Test
+				<br>
+				<p class="text-center"><?php echo $_smarty_tpl->tpl_vars['goods']->value['goods_service'];?>
+</p>
 			</div>
 			<div class="tab-pane fade" id="special" role="tabpanel" aria-laballedy="special-tab">
-				Special Test
+				<p><?php echo $_smarty_tpl->tpl_vars['goods']->value['goods_special'];?>
+</p>
 			</div>
 		</div>
 	</div>

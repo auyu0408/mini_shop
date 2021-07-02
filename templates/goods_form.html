@@ -4,16 +4,37 @@
 <script src="vendor/ckfinder/ckfinder.js"></script>
 <form action="tool.php" method="post" class="form-horizontal" role="form" enctype="multipart/form-data">
 	<div class="form-group">
-		<label class="col-2 control-label">Product name:</label>
+		<label class="col-2 control-label">Song name:</label>
 		<div class="col-10">
 			<input type="text" class="form-control" name="goods_title" id="goods_title" placeholder="please enter good's name" value="{$goods.goods_title}">
 		</div>
 	</div>
 
 	<div class="form-group">
-		<label class="col-2 control-label">Product content:</label>
+		<label class="col-2 control-label">Introduction:</label>
 		<div class="col-10">
 			<textarea class="form-control" name="goods_content" id="goods_content" placeholder="please enter good's content">{$goods.goods_content}</textarea>
+		</div>
+	</div>
+
+	<div class="form-group">
+		<label class="col-2 control-label">Lyrics:</label>
+		<div class="col-10">
+			<textarea class="form-control" name="goods_notice" id="goods_notice" placeholder="please enter sth should be notice">{$goods.goods_notice}</textarea>
+		</div>
+	</div>
+
+	<div class="form-group">
+		<label class="col-2 control-label">Video:</label>
+		<div class="col-10">
+			<textarea class="form-control" name="goods_service" id="goods_service" placeholder="please enter additional service">{$goods.goods_service}</textarea>
+		</div>
+	</div>
+	
+	<div class="form-group">
+		<label class="col-2 control-label">Credit:</label>
+		<div class="col-10">
+			<textarea class="form-control" name="goods_special" id="goods_special" placeholder="please enter good's special">{$goods.goods_special}</textarea>
 		</div>
 	</div>
 
@@ -51,6 +72,27 @@
 
 <script>
 	var editor = CKEDITOR.replace('goods_content');
+	CKEDITOR.replace( 'editor1', {
+    filebrowserBrowseUrl: '/ckfinder/ckfinder.html',
+    filebrowserUploadUrl: '/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files'
+} );
+</script>
+<script>
+	var editor = CKEDITOR.replace('goods_notice');
+	CKEDITOR.replace( 'editor1', {
+    filebrowserBrowseUrl: '/ckfinder/ckfinder.html',
+    filebrowserUploadUrl: '/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files'
+} );
+</script>
+<script>
+	var editor = CKEDITOR.replace('goods_service');
+	CKEDITOR.replace( 'editor1', {
+    filebrowserBrowseUrl: '/ckfinder/ckfinder.html',
+    filebrowserUploadUrl: '/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files'
+} );
+</script>
+<script>
+	var editor = CKEDITOR.replace('goods_special');
 	CKEDITOR.replace( 'editor1', {
     filebrowserBrowseUrl: '/ckfinder/ckfinder.html',
     filebrowserUploadUrl: '/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files'

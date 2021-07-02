@@ -47,7 +47,19 @@ function add_to_cart($goods_sn = '', $goods_title='')
 function list_goods()
 {
 	global $smarty, $mysqli;
-	$sql = "select * from `goods` order by `goods_date` desc";
+	include_once "vendor/PageBar.php";
+
+	$sql = "select * from goods order by goods_date desc";
+	
+	$counter = 30;
+	$pages = 10;
+	$PageBar = getPageBar($sql,$counter,$pages);
+	$total = $PageBar['total'];
+	$sql = $PageBar['sql'];
+	$bar = $PageBar['bar'];
+	$smarty->assign('bar',$bar);
+	$smarty->assign('total',$total);
+
 	$result = $mysqli->query($sql) or die($mysqli->connect_error);
 	$i = 0;
 	while($goods = $result->fetch_assoc())//fetch_assoc一次一筆，會抓到沒有，抓回來是一維陣列，放在goods內

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-06-25 00:33:57
+/* Smarty version 3.1.39, created on 2021-07-02 17:55:25
   from '/usr/share/nginx/html/mini_shop/templates/goods_form.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_60d4b3f56da7d4_70779813',
+  'unifunc' => 'content_60dee28d4fdab1_40287778',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '2f3446b860578558e53216be769ea78999df770b' => 
     array (
       0 => '/usr/share/nginx/html/mini_shop/templates/goods_form.html',
-      1 => 1624551701,
+      1 => 1625219722,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_60d4b3f56da7d4_70779813 (Smarty_Internal_Template $_smarty_tpl) {
+function content_60dee28d4fdab1_40287778 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <h1>Edit goods</h1>
 <?php echo '<script'; ?>
@@ -31,7 +31,7 @@ function content_60d4b3f56da7d4_70779813 (Smarty_Internal_Template $_smarty_tpl)
 >
 <form action="tool.php" method="post" class="form-horizontal" role="form" enctype="multipart/form-data">
 	<div class="form-group">
-		<label class="col-2 control-label">Product name:</label>
+		<label class="col-2 control-label">Song name:</label>
 		<div class="col-10">
 			<input type="text" class="form-control" name="goods_title" id="goods_title" placeholder="please enter good's name" value="<?php echo $_smarty_tpl->tpl_vars['goods']->value['goods_title'];?>
 ">
@@ -39,9 +39,33 @@ function content_60d4b3f56da7d4_70779813 (Smarty_Internal_Template $_smarty_tpl)
 	</div>
 
 	<div class="form-group">
-		<label class="col-2 control-label">Product content:</label>
+		<label class="col-2 control-label">Introduction:</label>
 		<div class="col-10">
 			<textarea class="form-control" name="goods_content" id="goods_content" placeholder="please enter good's content"><?php echo $_smarty_tpl->tpl_vars['goods']->value['goods_content'];?>
+</textarea>
+		</div>
+	</div>
+
+	<div class="form-group">
+		<label class="col-2 control-label">Lyrics:</label>
+		<div class="col-10">
+			<textarea class="form-control" name="goods_notice" id="goods_notice" placeholder="please enter sth should be notice"><?php echo $_smarty_tpl->tpl_vars['goods']->value['goods_notice'];?>
+</textarea>
+		</div>
+	</div>
+
+	<div class="form-group">
+		<label class="col-2 control-label">Video:</label>
+		<div class="col-10">
+			<textarea class="form-control" name="goods_service" id="goods_service" placeholder="please enter additional service"><?php echo $_smarty_tpl->tpl_vars['goods']->value['goods_service'];?>
+</textarea>
+		</div>
+	</div>
+	
+	<div class="form-group">
+		<label class="col-2 control-label">Credit:</label>
+		<div class="col-10">
+			<textarea class="form-control" name="goods_special" id="goods_special" placeholder="please enter good's special"><?php echo $_smarty_tpl->tpl_vars['goods']->value['goods_special'];?>
 </textarea>
 		</div>
 	</div>
@@ -85,6 +109,33 @@ function content_60d4b3f56da7d4_70779813 (Smarty_Internal_Template $_smarty_tpl)
 <?php echo '<script'; ?>
 >
 	var editor = CKEDITOR.replace('goods_content');
+	CKEDITOR.replace( 'editor1', {
+    filebrowserBrowseUrl: '/ckfinder/ckfinder.html',
+    filebrowserUploadUrl: '/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files'
+} );
+<?php echo '</script'; ?>
+>
+<?php echo '<script'; ?>
+>
+	var editor = CKEDITOR.replace('goods_notice');
+	CKEDITOR.replace( 'editor1', {
+    filebrowserBrowseUrl: '/ckfinder/ckfinder.html',
+    filebrowserUploadUrl: '/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files'
+} );
+<?php echo '</script'; ?>
+>
+<?php echo '<script'; ?>
+>
+	var editor = CKEDITOR.replace('goods_service');
+	CKEDITOR.replace( 'editor1', {
+    filebrowserBrowseUrl: '/ckfinder/ckfinder.html',
+    filebrowserUploadUrl: '/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files'
+} );
+<?php echo '</script'; ?>
+>
+<?php echo '<script'; ?>
+>
+	var editor = CKEDITOR.replace('goods_special');
 	CKEDITOR.replace( 'editor1', {
     filebrowserBrowseUrl: '/ckfinder/ckfinder.html',
     filebrowserUploadUrl: '/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files'

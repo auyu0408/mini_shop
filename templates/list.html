@@ -1,4 +1,6 @@
 <!DOCTYPE html>
+<h1>Hi</h1>
+<!--
 <div class="row">
 	{if $isAdmin}
 	<div class="col-2">
@@ -11,15 +13,25 @@
 	{/if}
 	<div class="col-10">
 		<ul class="list-group">
-			<h3 class="text-center">UNDO</h3>
 			{foreach from=$bill_arr item=bill}
 			<a href="bill.php?op=display_bill&bill_sn={$bill.bill_sn}" class="list-group-item list-group-item-light list-group-item-action">{$bill.bill_date}</a>
+			{if $bill.bill_status}<span class="label label-success">{$bill.bill_status}</span>{/if}
 			{/foreach}
-			<br>
-			<h3 class="text-center">DONE</h3>
-			{foreach from=$bill_d item=bill}
+		</ul>
+	</div>
+	
+	<div class="col-10">
+		<ul class="list-group">
+			<h2 class="text-center">UNDO</h2>
+			{foreach from=$bill_arr item=bill}
+			<a href="bill.php?op=display_bill&bill_sn={$bill_n.bill_sn}" class="list-group-item list-group-item-light list-group-item-action">{$bill.bill_date}</a>
+			
+			<h2 class="text-center">DONE</h2>
+			{foreach from=$bill_arr_d item=bill}
 			<a href="bill.php?op=display_bill&bill_sn={$bill.bill_sn}" class="list-group-item list-group-item-light list-group-item-action">{$bill.bill_date}</a>
+		
 			{/foreach}
 		</ul>
 	</div>
 </div>
+-->

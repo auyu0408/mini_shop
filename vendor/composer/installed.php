@@ -5,7 +5,7 @@
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => '45fd6117f24459bd37a54d152479c7d2eecaff93',
+        'reference' => '9767429641b2e93f1abb6dae5763c0ec958537b8',
         'name' => '__root__',
         'dev' => true,
     ),
@@ -16,7 +16,7 @@
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => '45fd6117f24459bd37a54d152479c7d2eecaff93',
+            'reference' => '9767429641b2e93f1abb6dae5763c0ec958537b8',
             'dev_requirement' => false,
         ),
         'graham-campbell/result-type' => array(
@@ -63,6 +63,21 @@
             'aliases' => array(),
             'reference' => 'eca0bf41ed421bed1b57c4958bab16aa86b757d0',
             'dev_requirement' => false,
+        ),
+        'twbs/bootstrap' => array(
+            'pretty_version' => 'v5.0.2',
+            'version' => '5.0.2.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../twbs/bootstrap',
+            'aliases' => array(),
+            'reference' => '688bce4fa695cc360a0d084e34f029b0c192b223',
+            'dev_requirement' => false,
+        ),
+        'twitter/bootstrap' => array(
+            'dev_requirement' => false,
+            'replaced' => array(
+                0 => 'v5.0.2',
+            ),
         ),
         'vlucas/phpdotenv' => array(
             'pretty_version' => 'v5.3.0',

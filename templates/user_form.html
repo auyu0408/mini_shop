@@ -7,28 +7,29 @@
 	});
 </script>
 
-<form action="user.php" id="user_form" method="post" class="form-horizontal">
-	<div class="row g-3">
-		<div class="col-md-6">
-			<label for="user_name">Name:</label>
-			<input type="text" class="form-control" name="user_name" id="user_name" placeholder="enter your name" value="{$user.user_name}">
-		</div>
+<form action="user.php" id="user_form" method="post" class="row g-3 needs-validation" novalidate>
+	<div class="col-md-6">
+		<label for="user_name" class="form-label">Name:</label>
+		<input type="text" class="form-control" name="user_name" id="user_name" placeholder="enter your name" value="{$user.user_name}" required>
+		<div class="valid-feedback">Pass</div>
+	</div>
 	
-		<div class="col-md-6">
-			<label for="user_sex">Sex:</label>
-			<br>
-			<label class="radio-inline">
-				<input type="radio" name="user_sex" id="user_sex_1" value="M" {if $user.user_sex=='M'}checked{/if}> Male
-			</label>
-			<label class="radio-inline">
-				<input type="radio" name="user_sex" id="user_sex_0" value="F" {if $user.user_sex=='F'}checked{/if}> Female
-			</label>
-		</div>
+	<div class="col-md-6">
+		<label for="user_sex">Sex:</label>
+		<br>
+		<label class="radio-inline">
+			<input type="radio" name="user_sex" id="user_sex_1" value="M" {if $user.user_sex=='M'}checked{/if}> Male
+		</label>
+		<label class="radio-inline">
+			<input type="radio" name="user_sex" id="user_sex_0" value="F" {if $user.user_sex=='F'}checked{/if}> Female
+		</label>
+	</div>
 
-		<div class="col-md-6">
-			<label for="user_id">ID:</label>
-			<input type="text" class="form-control" name="user_id" id="user_id" placeholder="please enter your account id" value="{$user.user_id}">
-		</div>
+	<div class="col-md-6">
+		<label for="user_id">ID:</label>
+		<input type="text" class="form-control" name="user_id" id="user_id" placeholder="enter your account id" value="{$user.user_id}" required>
+		<div class="valid-feedback">Pass</div>
+	</div>
 
 		<div class="col-md-6 has-error">
 			<label for="user_passwd">Password:</label>
@@ -82,5 +83,4 @@
 		<div class="col-1">
 		<button type="submit" class="btn btn-outline-info">Save</button>
 		</div>
-	</div>
 </form>

@@ -10,7 +10,7 @@ $smarty->compile_dir = 'templates_c';
 $smarty->cache_dir = 'cache';
 $smarty->config_dir = 'config';
 
-$mysqli = new mysqli(_DB_HOST, _DB_ID, _DB_PW, _DB_NAME);
+$mysqli = new mysqli($DB_HOST, $DB_ID, $DB_PW, $DB_NAME);
 if ($mysqli->connect_error){
 	die('無法連上資料庫('.$mysqli->connect_error.')'.$mysqli->connect_error);
 }

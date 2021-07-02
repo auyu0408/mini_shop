@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-06-30 21:57:15
+/* Smarty version 3.1.39, created on 2021-07-02 18:59:31
   from '/usr/share/nginx/html/mini_shop/templates/list_bill.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_60dc783befcc49_67060915',
+  'unifunc' => 'content_60def1932d3166_98079002',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '2e69c2fc5b9c86fa088efc59b5b5576a4f0a8eff' => 
     array (
       0 => '/usr/share/nginx/html/mini_shop/templates/list_bill.html',
-      1 => 1625061431,
+      1 => 1625223570,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_60dc783befcc49_67060915 (Smarty_Internal_Template $_smarty_tpl) {
+function content_60def1932d3166_98079002 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <div class="row">
 	<?php if ($_smarty_tpl->tpl_vars['isAdmin']->value) {?>
@@ -43,6 +43,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 	<?php }?>
 	<div class="col-10">
 		<ul class="list-group">
+			<h3 class="text-center">UNDO</h3>
 			<?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['bill_arr']->value, 'bill');
 $_smarty_tpl->tpl_vars['bill']->do_else = true;
@@ -52,8 +53,20 @@ $_smarty_tpl->tpl_vars['bill']->do_else = false;
 			<a href="bill.php?op=display_bill&bill_sn=<?php echo $_smarty_tpl->tpl_vars['bill']->value['bill_sn'];?>
 " class="list-group-item list-group-item-light list-group-item-action"><?php echo $_smarty_tpl->tpl_vars['bill']->value['bill_date'];?>
 </a>
-			<?php if ($_smarty_tpl->tpl_vars['bill']->value['bill_status']) {?><span class="label label-success"><?php echo $_smarty_tpl->tpl_vars['bill']->value['bill_status'];?>
-</span><?php }?>
+			<?php
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
+			<br>
+			<h3 class="text-center">DONE</h3>
+			<?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['bill_d']->value, 'bill');
+$_smarty_tpl->tpl_vars['bill']->do_else = true;
+if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['bill']->value) {
+$_smarty_tpl->tpl_vars['bill']->do_else = false;
+?>
+			<a href="bill.php?op=display_bill&bill_sn=<?php echo $_smarty_tpl->tpl_vars['bill']->value['bill_sn'];?>
+" class="list-group-item list-group-item-light list-group-item-action"><?php echo $_smarty_tpl->tpl_vars['bill']->value['bill_date'];?>
+</a>
 			<?php
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>

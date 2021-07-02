@@ -1,19 +1,23 @@
 <!DOCTYPE html>
 <div class ="row">
-	{foreach from=$all_goods item=goods}
+	 {foreach from=$all_goods item=goods}
 	<div class='col-sm-6 col-md-4'>
 		<div class="img-thumbnail"><!--不只圖，把文字也包起來-->
 			<a href="index.php?goods_sn={$goods.goods_sn}"><img src="{$goods.pic}" alt="{$goods.goods_title}" class="img-thumbnail rounded"></a><!--圖片會包兩層-->
 			<div class="caption">
 				<div style="height: 60px;">
-					<h3><a href="index.php?goods_sn={$goods.goods_sn}">{$goods.goods_title}</a></h3>
+					<h5><a href="index.php?goods_sn={$goods.goods_sn}">{$goods.goods_title}</a></h5>
 				</div>
 				<div class="row">
-					<div class="col-md-6">price:{$goods.goods_price}</div>
+					<div class="col-md-6">popularity:{$goods.goods_counter}</div>
 				</div>
 			</div>
 		</div>
 	</div>
 	{/foreach}
+	<div class="text-center">
+		<br>
+		共有{$total}件商品
+	</div>
 	{$bar}
 </div>

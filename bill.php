@@ -142,13 +142,19 @@ function list_bill($user_sn = "")
 		$user_sn = $_SESSION['user_sn'];
 	}
 	$user_sn = $isAdmin ? $user_sn : $_SESSION['user_sn'];
-	echo $user_sn;
-	$sql = "select * from bill where user_sn='{$user_sn}' order by bill_date desc";
+	$sql = "select * from bill where user_sn='{$user_sn}' and bill_status!='Done' order by bill_date desc";
 	$result = $mysqli->query($sql) or die($mysqli->connect_error);
 	while($all = $result->fetch_assoc()){
 		$bill_arr[] = $all;
 	}
 	$smarty->assign('bill_arr', $bill_arr);
+
+	$sql = "select * from bill where user_sn='{$user_sn}' and bill_status='Done' order by bill_date desc";
+	$result = $mysqli->query($sql) or die($mysqli->connect_error);
+	while($all = $result->fetch_assoc()){
+		$bill_d[] = $all;
+	}
+	$smarty->assign('bill_d', $bill_d);
 
 	$all_users = '';
 	if($isAdmin)

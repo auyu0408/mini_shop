@@ -7,6 +7,7 @@ if (!$isAdmin){
 	exit;
 }
 
+
 /*流程控制*/
 $op = isset($_REQUEST['op']) ? my_filter($_REQUEST['op'], "string") :'';
 $goods_sn = isset($_REQUEST['goods_sn'])?my_filter($_REQUEST['goods_sn'], "int") :'';
@@ -64,13 +65,14 @@ function goods_form($goods_sn)
 //insert_goods
 function insert_goods(){
 	global $mysqli;
-	$goods_title = $mysqli->real_escape_string($_POST['goods_title']);
-	$goods_content = $mysqli->real_escape_string($_POST['goods_content']);
-	$goods_price = $mysqli->real_escape_string($_POST['goods_price']);
+	foreach($_POST as $var_name => $var_val)
+	{
+		$$var_name = $mysqli->real_escape_string($var_val);
+	}
 	$goods_date = date("Y-m-d H:i:s");
 
 
-	$sql = "INSERT INTO goods(goods_title,goods_content,goods_price,goods_counter,goods_date) VALUES('{$goods_title}','{$goods_content}','{$goods_price}','0','{$goods_date}')";
+	$sql = "INSERT INTO goods(goods_title,goods_content,goods_price,goods_counter,goods_date,goods_notice,goods_service,goods_special) VALUES('{$goods_title}','{$goods_content}','{$goods_price}','0','{$goods_date}','{$goods_notice}','{$goods_service}','{$goods_special}')";
 	$mysqli->query($sql) or die($mysqli->connect_error);
 	$goods_sn = $mysqli->insert_id;
 	save_goods_pic($goods_sn);
@@ -120,20 +122,31 @@ function save_goods_pic($goods_sn = "")
 function update_goods($goods_sn)
 {
 	global $mysqli;
+	$flag=0;
+	if($_POST['goods_service']=="")
+	{
+		$flag = 1;
+	}
 	foreach($_POST as $var_name => $var_val)
 	{
 		$$var_name = $mysqli->real_escape_string($var_val);
 	}
-
+	
 	$goods_date = date("Y-m-d H:i:s");
-
 	$sql = "update goods set
 		goods_title = '{$goods_title}',
 		goods_content = '{$goods_content}',
 		goods_price = '{$goods_price}',
-		goods_date = '{$goods_date}'
+		goods_date = '{$goods_date}',
+		goods_notice = '{$goods_notice}',
+		goods_special = '{$goods_special}'
 		where goods_sn = {$goods_sn}";
 	$mysqli->query($sql) or die ($mysqli->connect_error);
+	if($flag==0)
+	{
+		$sql = "update goods set goods_service='{$goods_service}'";
+		$mysqli->query($sql) or die ($mysqli->connect_error);
+	}
 	save_goods_pic($goods_sn);
 }
 //delete
@@ -155,4 +168,5 @@ function delete_goods_pic($goods_sn)
 	}
 }
 ?>
+
 

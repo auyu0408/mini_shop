@@ -25,13 +25,13 @@
 				<button class="nav-link active" id="goods-tab" data-bs-toggle="tab" data-bs-target="#goods" type="button" role="tab" aria-controls="goods" aria-selected="true">Introduction</button>
 			</li>
 			<li class="nav-item" role="presentation">
-				<button class="nav-link" id="note-tab" data-bs-toggle="tab" data-bs-target="#note" type="button" role="tab" aria-controls="note" aria-selected="false">Notice</button>
+				<button class="nav-link" id="note-tab" data-bs-toggle="tab" data-bs-target="#note" type="button" role="tab" aria-controls="note" aria-selected="false">Lyrics</button>
 			</li>
 			<li role="nav-item" role="presentation">
-				<button class="nav-link" id="service-tab" data-bs-toggle="tab" data-bs-target="#service" type="button" role="tab" aria-controls="goods" aria-selected="false">Service</button>
+				<button class="nav-link" id="service-tab" data-bs-toggle="tab" data-bs-target="#service" type="button" role="tab" aria-controls="goods" aria-selected="false">Video</button>
 			</li>
 			<li role="nav-item" role="presentation">
-				<button class="nav-link" id="special-tab" data-bs-toggle="tab" data-bs-target="#special" type="button" role="tab" aria-controls="goods" aria-selected="false">Special</button>
+				<button class="nav-link" id="special-tab" data-bs-toggle="tab" data-bs-target="#special" type="button" role="tab" aria-controls="goods" aria-selected="false">Credit</button>
 			</li>
 		</ul>
 		<div class="tab-content">
@@ -39,13 +39,14 @@
 				<p>{$goods.goods_content}</p>
 			</div>
 			<div class="tab-pane fade" id="note" role="tabpanel" aria-laballedy="note-tab">
-				Notice Test
+				<p>{$goods.goods_notice}</p>
 			</div>
 			<div class="tab-pane fade" id="service" role="tabpanel" aria-laballedy="special-tab">
-				Service Test
+				<br>
+				<p class="text-center">{$goods.goods_service}</p>
 			</div>
 			<div class="tab-pane fade" id="special" role="tabpanel" aria-laballedy="special-tab">
-				Special Test
+				<p>{$goods.goods_special}</p>
 			</div>
 		</div>
 	</div>

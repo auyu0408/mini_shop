@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-07-01 22:06:13
+/* Smarty version 3.1.39, created on 2021-07-02 11:23:03
   from '/usr/share/nginx/html/mini_shop/templates/user_form.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_60ddcbd5b5d789_72021284',
+  'unifunc' => 'content_60de86971f0098_01535603',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'd76844a06ab2bdd0e70911e2fa91f4b4f2a5e671' => 
     array (
       0 => '/usr/share/nginx/html/mini_shop/templates/user_form.html',
-      1 => 1625131831,
+      1 => 1625192862,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_60ddcbd5b5d789_72021284 (Smarty_Internal_Template $_smarty_tpl) {
+function content_60de86971f0098_01535603 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <h1>Sign up</h1>
 
@@ -32,30 +32,31 @@ function content_60ddcbd5b5d789_72021284 (Smarty_Internal_Template $_smarty_tpl)
 <?php echo '</script'; ?>
 >
 
-<form action="user.php" id="user_form" method="post" class="form-horizontal">
-	<div class="row g-3">
-		<div class="col-md-6">
-			<label for="user_name">Name:</label>
-			<input type="text" class="form-control" name="user_name" id="user_name" placeholder="enter your name" value="<?php echo $_smarty_tpl->tpl_vars['user']->value['user_name'];?>
-">
-		</div>
+<form action="user.php" id="user_form" method="post" class="row g-3 needs-validation" novalidate>
+	<div class="col-md-6">
+		<label for="user_name" class="form-label">Name:</label>
+		<input type="text" class="form-control" name="user_name" id="user_name" placeholder="enter your name" value="<?php echo $_smarty_tpl->tpl_vars['user']->value['user_name'];?>
+" required>
+		<div class="valid-feedback">Pass</div>
+	</div>
 	
-		<div class="col-md-6">
-			<label for="user_sex">Sex:</label>
-			<br>
-			<label class="radio-inline">
-				<input type="radio" name="user_sex" id="user_sex_1" value="M" <?php if ($_smarty_tpl->tpl_vars['user']->value['user_sex'] == 'M') {?>checked<?php }?>> Male
-			</label>
-			<label class="radio-inline">
-				<input type="radio" name="user_sex" id="user_sex_0" value="F" <?php if ($_smarty_tpl->tpl_vars['user']->value['user_sex'] == 'F') {?>checked<?php }?>> Female
-			</label>
-		</div>
+	<div class="col-md-6">
+		<label for="user_sex">Sex:</label>
+		<br>
+		<label class="radio-inline">
+			<input type="radio" name="user_sex" id="user_sex_1" value="M" <?php if ($_smarty_tpl->tpl_vars['user']->value['user_sex'] == 'M') {?>checked<?php }?>> Male
+		</label>
+		<label class="radio-inline">
+			<input type="radio" name="user_sex" id="user_sex_0" value="F" <?php if ($_smarty_tpl->tpl_vars['user']->value['user_sex'] == 'F') {?>checked<?php }?>> Female
+		</label>
+	</div>
 
-		<div class="col-md-6">
-			<label for="user_id">ID:</label>
-			<input type="text" class="form-control" name="user_id" id="user_id" placeholder="please enter your account id" value="<?php echo $_smarty_tpl->tpl_vars['user']->value['user_id'];?>
-">
-		</div>
+	<div class="col-md-6">
+		<label for="user_id">ID:</label>
+		<input type="text" class="form-control" name="user_id" id="user_id" placeholder="enter your account id" value="<?php echo $_smarty_tpl->tpl_vars['user']->value['user_id'];?>
+" required>
+		<div class="valid-feedback">Pass</div>
+	</div>
 
 		<div class="col-md-6 has-error">
 			<label for="user_passwd">Password:</label>
@@ -116,7 +117,6 @@ function content_60ddcbd5b5d789_72021284 (Smarty_Internal_Template $_smarty_tpl)
 		<div class="col-1">
 		<button type="submit" class="btn btn-outline-info">Save</button>
 		</div>
-	</div>
 </form>
 <?php }
 }

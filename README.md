@@ -1,3 +1,6 @@
 # mini_shop
-前端後端練習，我快死了嗚嗚嗚，你看到的我只是靈魂  
-等我寫完再說......
+
+---
+
+actually it should called a video introduction website!XD
+
