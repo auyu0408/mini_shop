@@ -54,7 +54,9 @@ define('_MODE','P');
 ?>
 ```
 - if you want to use Mode 1, comment the top half, show the bottom half.  
-- else, comment the bottom half, default is mode 2.  
+- else, comment the bottom half, default is mode 2. 
+- variable _SHOP_NAME is the website title, you can change it.  
+- you can also change the cover in `image/`. My cover is combine by a big picture and a small picture.
 
 ### Mode 1 Simple shopping website  
 #### When you see the website first:  
@@ -159,4 +161,7 @@ DB_NAME="mini_shop"
 #usually we don't need too much admin
 ADMIN1="A" #change to user_id you set
 ```
-
+## Materia  
+[Youtube](https://www.youtube.com)
+[Walfie](https://twitter.com/walfieee?s=21)(cover picture)
+[hololive logo](https://en.hololive.tv/)(logo picture)
