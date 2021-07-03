@@ -1,5 +1,5 @@
 <?php
-require_once "var.php";
+require_once "mode_choose/var.php";
 //look cart
 if(isset($_COOKIE['cart']) and $_COOKIE['cart']!='')
 {

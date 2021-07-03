@@ -1,7 +1,7 @@
 <?php
 session_start();
 require_once "config.php";
-require_once "var_config.php";
+require_once "mode_choose/var_config.php";
 require_once "function.php";
 require_once 'Smarty/Smarty.class.php';
 $smarty = new Smarty;

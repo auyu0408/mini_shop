@@ -5,22 +5,21 @@
 	</div>
 	<div class="col-md-6">
 		<h2>{$goods.goods_title}</h2>
-		{if $mode==0}
-		<p>Price:{$goods.goods_price}NTD</p>
-		{/if}
-		<p>Popular:{$goods.goods_counter}</p>
-		<div>
 			{if $mode==0}
-				<a href="index.php?op=add_to_cart&goods_sn={$goods.goods_sn}&goods_title={$goods.goods_title}" class="btn btn-outline-success" role="button">Add to Cart</a>
-				{if $isAdmin}
-					<a href="tool.php?op=goods_form&goods_sn={$goods.goods_sn}" class="btn btn-outline-secondary">edit</a>
-					<a href="tool.php?op=delete_goods&goods_sn={$goods.goods_sn}" class="btn btn-outline-danger">delete</a>
-				{/if}
+				<p>Price:{$goods.goods_price}NTD</p>
 			{/if}
-		</div>
+		<p>Popular:{$goods.goods_counter}</p>
+		
+		{if $mode==0}
+			<a href="index.php?op=add_to_cart&goods_sn={$goods.goods_sn}&goods_title={$goods.goods_title}" class="btn btn-outline-success" role="button">Add to Cart</a>
+			{if $isAdmin}
+				<a href="tool.php?op=goods_form&goods_sn={$goods.goods_sn}" class="btn btn-outline-secondary">edit</a>
+				<a href="tool.php?op=delete_goods&goods_sn={$goods.goods_sn}" class="btn btn-outline-danger">delete</a>
+			{/if}
+		{/if}
+		<a href="index.php" class="btn btn-outline-info" role="button">Go Back</a>	
 	</div>
 </div>
-
 <br>
 <div class="row">
 	<div class="col-md-12">

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-07-03 15:19:45
+/* Smarty version 3.1.39, created on 2021-07-03 18:49:35
   from '/usr/share/nginx/html/mini_shop/templates/goods_list.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_60e00f91f2ca09_98796106',
+  'unifunc' => 'content_60e040bf24ca34_86562734',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '97f632a7d22da4ec5d4d52b033dbbce6541a6ef2' => 
     array (
       0 => '/usr/share/nginx/html/mini_shop/templates/goods_list.html',
-      1 => 1625296539,
+      1 => 1625309331,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_60e00f91f2ca09_98796106 (Smarty_Internal_Template $_smarty_tpl) {
+function content_60e040bf24ca34_86562734 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <div class ="row">
 	 <?php
@@ -57,12 +57,14 @@ $_smarty_tpl->tpl_vars['goods']->do_else = false;
 	<?php
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
-	<div class="text-center">
-		<br>
-		共有<?php echo $_smarty_tpl->tpl_vars['total']->value;?>
+</div>
+<div class="row">
+<div class="text-center">
+	<br>
+	共有<?php echo $_smarty_tpl->tpl_vars['total']->value;?>
 件商品
-	</div>
-	<?php echo $_smarty_tpl->tpl_vars['bar']->value;?>
+</div>
+<?php echo $_smarty_tpl->tpl_vars['bar']->value;?>
 
 </div>
 <?php }

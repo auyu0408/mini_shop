@@ -17,5 +17,5 @@ define('_SERVICE','Service');
 define('_SPECIAL','Special');	
 define('_GOOD','Product');
 define('_MODE','P');
-*/
+ */
 ?>

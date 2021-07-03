@@ -39,7 +39,7 @@ server {
 	# include snippets/snakeoil.conf;
 
 	#root /mini_shop;
-	root /usr/share/nginx/html/mini_shop;
+	root /mini_shop;
 
 	# Add index.php to the list if you are using PHP
 	index index.php index.html
