@@ -1,4 +1,5 @@
 # mini_shop  
+github:https://github.com/auyu0408/mini_shop  
 根據[這本書](https://ebook.nlpi.edu.tw/bookdetail/32953)做出來的簡易購物網站，但也可作為單純的歌曲分享網站  
 ![](https://i.imgur.com/x9eG3gK.png)
 
@@ -27,7 +28,9 @@ in `mode-choose` we can let the website have different function.
 user id:A
 password:00000000
 ```
-you can edit user id and password, I will mention it later.   
+you can edit user id and password, I will mention it later.  
+**Remember, don't use same user_id to sign up.**  
+
 - change mode
   in `mode_choose/var_config.php`
 ```php
@@ -54,34 +57,37 @@ define('_MODE','P');
 ?>
 ```
 - if you want to use Mode 1, comment the top half, show the bottom half.  
-- else, comment the bottom half, default is mode 2.  
+- else, comment the bottom half, default is Mode 2.  
+- variable \_SHOP_NAME is the website title, you can change it.
+- you can also change the cover in `image/`. My cover is combine by a big picture and a small picture.
 
-### Mode 1 Simple shopping website  
+### Mode 1: Simple shopping website  
 #### When you see the website first:  
 ![](https://i.imgur.com/eNoG77m.png)
 - upward of the right side  
   login pannel, login with default admin or sign up.  
 - middle of the right side  
-  shopping cart, you can add product wherever who you are, but only member can check out.  
+  shopping cart, you can add product wherever who you are, but only member can check out the bill.  
 - click the product you can see product introduction.  
 #### After you login and click it:
 ![](https://i.imgur.com/pH79cUC.png)
 - upward of the right side  
-  tool pannel, only admin can published new thing  
+  tool pannel, only admin can published new thing.  
 - middle is product information  
-  only admin can edit and delete product  
+  only admin can edit and delete product.  
 - admin can arrange product information by yourself.  
 - Go Back button will go to Home Page.
 #### Account and Order management:  
 ![](https://i.imgur.com/soG8tTn.png)
 - account managerment  
-  you can't delete admin account  
-  only admin can edit or delete all people's account  
+  you can't delete admin account.  
+  only admin can edit or delete all people's account.  
   normal member can only edit themselves.  
+- **Don't use the same user_id**  
   
 ![](https://i.imgur.com/aUidcW4.png)
 - order managerment  
-  order would seperate into done or undo  
+  order would seperate into done or undo.  
   only admin can see all people's order and delete/mark then done.  
   
 ![](https://i.imgur.com/16XORGD.png)
@@ -89,11 +95,11 @@ define('_MODE','P');
 
 #### edit product:
 ![](https://i.imgur.com/sDpRQcU.png)
-- 在Service欄嵌入原始碼不會被洗掉，其他的話可能要每次編輯就要重新嵌入  
-- 一但在Service嵌入原始碼，要讓該欄完全空白會偏難（可以考慮嵌入沒有字顯示的原始碼）  
+- 在Service欄嵌入原始碼不會被洗掉，其他的話可能要每次編輯就要重新嵌入。  
+- 一但在Service嵌入原始碼，要讓該欄完全空白會偏難（可以考慮嵌入沒有字顯示的原始碼）。  
 
 #### When you change admin ID or want to add new admin
-- first, edit `.env` file  
+- first, edit `.env` file.  
 ```.env
 ...
 DB_NAME="mini_shop"
@@ -103,7 +109,7 @@ ADMIN1="A" #change to user_id you set
 ADMIN2="B" #if you need to add new admin, add line like this
 ...(admin list)
 ```
-- second, edit `config.php`  
+- second, edit `config.php`.  
 ```php
 <?php
 require "vendor/autoload.php";
@@ -121,13 +127,13 @@ $ADMIN2 = $_ENV['ADMIN2'];(if you want to add new admin)
 $admin_array = [$ADMIN1,$ADMIN2,...]; //有幾個admin就加到幾
 ?>
 ```
-### Mode 2 Song display website  
+### Mode 2: Song display website  
 #### When you see the website first:  
 ![](https://i.imgur.com/1EjlRCm.png)
 - upward of the right side  
   login pannel, login with default admin.  
 - click the product you can see song introduction.  
-- no price, just popularity
+- no price, just popularity.
 #### After you login and click it:
 ![](https://i.imgur.com/VQBOLA9.png)
 
@@ -138,10 +144,10 @@ $admin_array = [$ADMIN1,$ADMIN2,...]; //有幾個admin就加到幾
 ![](https://i.imgur.com/nNQzb0D.png)
 
 - upward of the right side  
-  tool pannel, no order function  
+  tool pannel, no order function.  
 - middle is product information  
-  only admin can edit and delete product  
-  no add to cart  
+  only admin can edit and delete product.  
+  no add to cart button.  
 - admin can edit song information like above.  
 - Go Back button will go to Home Page.
 #### edit product:
@@ -159,4 +165,7 @@ DB_NAME="mini_shop"
 #usually we don't need too much admin
 ADMIN1="A" #change to user_id you set
 ```
-
+## Materia
+[Youtube](https://www.youtube.com)  
+[Walfie](https://twitter.com/walfieee?s=21)(cover picture)  
+[hololive logo](https://en.hololive.tv)(logo picture)
