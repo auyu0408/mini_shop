@@ -8,8 +8,13 @@
 				<div style="height: 60px;">
 					<h5><a href="index.php?goods_sn={$goods.goods_sn}">{$goods.goods_title}</a></h5>
 				</div>
+				{if $mode==0}
 				<div class="row">
-					<div class="col-md-6">popularity:{$goods.goods_counter}</div>
+					<div class="col-md-6 fs-6">price:{$goods.goods_price}</div>
+				</div>
+				{/if}
+				<div class="row">
+					<div class="col-md-6 fs-6">popularity:{$goods.goods_counter}</div>
 				</div>
 			</div>
 		</div>

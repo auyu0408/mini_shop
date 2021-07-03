@@ -5,13 +5,17 @@
 	</div>
 	<div class="col-md-6">
 		<h2>{$goods.goods_title}</h2>
+		{if $mode==0}
 		<p>Price:{$goods.goods_price}NTD</p>
+		{/if}
 		<p>Popular:{$goods.goods_counter}</p>
 		<div>
-			<a href="index.php?op=add_to_cart&goods_sn={$goods.goods_sn}&goods_title={$goods.goods_title}" class="btn btn-outline-success" role="button">Add to Cart</a>
-			{if $isAdmin}
-				<a href="tool.php?op=goods_form&goods_sn={$goods.goods_sn}" class="btn btn-outline-secondary">edit</a>
-				<a href="tool.php?op=delete_goods&goods_sn={$goods.goods_sn}" class="btn btn-outline-danger">delete</a>
+			{if $mode==0}
+				<a href="index.php?op=add_to_cart&goods_sn={$goods.goods_sn}&goods_title={$goods.goods_title}" class="btn btn-outline-success" role="button">Add to Cart</a>
+				{if $isAdmin}
+					<a href="tool.php?op=goods_form&goods_sn={$goods.goods_sn}" class="btn btn-outline-secondary">edit</a>
+					<a href="tool.php?op=delete_goods&goods_sn={$goods.goods_sn}" class="btn btn-outline-danger">delete</a>
+				{/if}
 			{/if}
 		</div>
 	</div>
@@ -25,13 +29,13 @@
 				<button class="nav-link active" id="goods-tab" data-bs-toggle="tab" data-bs-target="#goods" type="button" role="tab" aria-controls="goods" aria-selected="true">Introduction</button>
 			</li>
 			<li class="nav-item" role="presentation">
-				<button class="nav-link" id="note-tab" data-bs-toggle="tab" data-bs-target="#note" type="button" role="tab" aria-controls="note" aria-selected="false">Lyrics</button>
+				<button class="nav-link" id="note-tab" data-bs-toggle="tab" data-bs-target="#note" type="button" role="tab" aria-controls="note" aria-selected="false">{$notice}</button>
 			</li>
 			<li role="nav-item" role="presentation">
-				<button class="nav-link" id="service-tab" data-bs-toggle="tab" data-bs-target="#service" type="button" role="tab" aria-controls="goods" aria-selected="false">Video</button>
+				<button class="nav-link" id="service-tab" data-bs-toggle="tab" data-bs-target="#service" type="button" role="tab" aria-controls="goods" aria-selected="false">{$service}</button>
 			</li>
 			<li role="nav-item" role="presentation">
-				<button class="nav-link" id="special-tab" data-bs-toggle="tab" data-bs-target="#special" type="button" role="tab" aria-controls="goods" aria-selected="false">Credit</button>
+				<button class="nav-link" id="special-tab" data-bs-toggle="tab" data-bs-target="#special" type="button" role="tab" aria-controls="goods" aria-selected="false">{$special}</button>
 			</li>
 		</ul>
 		<div class="tab-content">

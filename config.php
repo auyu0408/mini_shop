@@ -2,7 +2,6 @@
 require "vendor/autoload.php";
 $dotenv=Dotenv\Dotenv::createMutable(__DIR__);
 $dotenv->load();
-define('_SHOP_NAME', 'Hololive production');
 
 //include env variable
 $DB_HOST = $_ENV['DB_HOST'];

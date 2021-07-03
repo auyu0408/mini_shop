@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-07-02 17:27:39
+/* Smarty version 3.1.39, created on 2021-07-03 15:19:45
   from '/usr/share/nginx/html/mini_shop/templates/goods_list.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_60dedc0bd58381_46246698',
+  'unifunc' => 'content_60e00f91f2ca09_98796106',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '97f632a7d22da4ec5d4d52b033dbbce6541a6ef2' => 
     array (
       0 => '/usr/share/nginx/html/mini_shop/templates/goods_list.html',
-      1 => 1625216703,
+      1 => 1625296539,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_60dedc0bd58381_46246698 (Smarty_Internal_Template $_smarty_tpl) {
+function content_60e00f91f2ca09_98796106 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <div class ="row">
 	 <?php
@@ -41,8 +41,14 @@ $_smarty_tpl->tpl_vars['goods']->do_else = false;
 "><?php echo $_smarty_tpl->tpl_vars['goods']->value['goods_title'];?>
 </a></h5>
 				</div>
+				<?php if ($_smarty_tpl->tpl_vars['mode']->value == 0) {?>
 				<div class="row">
-					<div class="col-md-6">popularity:<?php echo $_smarty_tpl->tpl_vars['goods']->value['goods_counter'];?>
+					<div class="col-md-6 fs-6">price:<?php echo $_smarty_tpl->tpl_vars['goods']->value['goods_price'];?>
+</div>
+				</div>
+				<?php }?>
+				<div class="row">
+					<div class="col-md-6 fs-6">popularity:<?php echo $_smarty_tpl->tpl_vars['goods']->value['goods_counter'];?>
 </div>
 				</div>
 			</div>

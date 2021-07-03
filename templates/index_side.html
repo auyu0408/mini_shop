@@ -12,8 +12,10 @@
 	{/if}
 </div>
 </div>
-{if isset($cart) and $cart!='' and $op!='check_out'}
-<br>
-{include file='side_cart.html'}
+{if $mode==0}
+	{if isset($cart) and $cart!='' and $op!='check_out'}
+	<br>
+	{include file='side_cart.html'}
+	{/if}
 {/if}
-
+</div>

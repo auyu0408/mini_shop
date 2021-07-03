@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-07-02 17:55:25
+/* Smarty version 3.1.39, created on 2021-07-03 10:48:08
   from '/usr/share/nginx/html/mini_shop/templates/goods_form.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_60dee28d4fdab1_40287778',
+  'unifunc' => 'content_60dfcfe8ac2b94_33331731',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '2f3446b860578558e53216be769ea78999df770b' => 
     array (
       0 => '/usr/share/nginx/html/mini_shop/templates/goods_form.html',
-      1 => 1625219722,
+      1 => 1625280066,
       2 => 'file',
     ),
   ),
@@ -20,9 +20,10 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_60dee28d4fdab1_40287778 (Smarty_Internal_Template $_smarty_tpl) {
+function content_60dfcfe8ac2b94_33331731 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
-<h1>Edit goods</h1>
+<h1>Edit <?php echo $_smarty_tpl->tpl_vars['good']->value;?>
+</h1>
 <?php echo '<script'; ?>
  src="vendor/ckeditor/ckeditor.js"><?php echo '</script'; ?>
 >
@@ -31,7 +32,8 @@ function content_60dee28d4fdab1_40287778 (Smarty_Internal_Template $_smarty_tpl)
 >
 <form action="tool.php" method="post" class="form-horizontal" role="form" enctype="multipart/form-data">
 	<div class="form-group">
-		<label class="col-2 control-label">Song name:</label>
+		<label class="col-2 control-label"><?php echo $_smarty_tpl->tpl_vars['good']->value;?>
+ name:</label>
 		<div class="col-10">
 			<input type="text" class="form-control" name="goods_title" id="goods_title" placeholder="please enter good's name" value="<?php echo $_smarty_tpl->tpl_vars['goods']->value['goods_title'];?>
 ">
@@ -47,7 +49,8 @@ function content_60dee28d4fdab1_40287778 (Smarty_Internal_Template $_smarty_tpl)
 	</div>
 
 	<div class="form-group">
-		<label class="col-2 control-label">Lyrics:</label>
+		<label class="col-2 control-label"><?php echo $_smarty_tpl->tpl_vars['notice']->value;?>
+:</label>
 		<div class="col-10">
 			<textarea class="form-control" name="goods_notice" id="goods_notice" placeholder="please enter sth should be notice"><?php echo $_smarty_tpl->tpl_vars['goods']->value['goods_notice'];?>
 </textarea>
@@ -55,7 +58,8 @@ function content_60dee28d4fdab1_40287778 (Smarty_Internal_Template $_smarty_tpl)
 	</div>
 
 	<div class="form-group">
-		<label class="col-2 control-label">Video:</label>
+		<label class="col-2 control-label"><?php echo $_smarty_tpl->tpl_vars['service']->value;?>
+:</label>
 		<div class="col-10">
 			<textarea class="form-control" name="goods_service" id="goods_service" placeholder="please enter additional service"><?php echo $_smarty_tpl->tpl_vars['goods']->value['goods_service'];?>
 </textarea>
@@ -63,7 +67,8 @@ function content_60dee28d4fdab1_40287778 (Smarty_Internal_Template $_smarty_tpl)
 	</div>
 	
 	<div class="form-group">
-		<label class="col-2 control-label">Credit:</label>
+		<label class="col-2 control-label"><?php echo $_smarty_tpl->tpl_vars['special']->value;?>
+:</label>
 		<div class="col-10">
 			<textarea class="form-control" name="goods_special" id="goods_special" placeholder="please enter good's special"><?php echo $_smarty_tpl->tpl_vars['goods']->value['goods_special'];?>
 </textarea>
@@ -71,7 +76,8 @@ function content_60dee28d4fdab1_40287778 (Smarty_Internal_Template $_smarty_tpl)
 	</div>
 
 	<div class="form-group">
-		<label class="col-2 control-label">Product price:</label>
+		<label class="col-2 control-label"><?php echo $_smarty_tpl->tpl_vars['good']->value;?>
+ price:</label>
 		<div class="col-10">
 			<input type="text" class="form-control" name="goods_price" id="goods_price" placeholder="please enter good's price" value="<?php echo $_smarty_tpl->tpl_vars['goods']->value['goods_price'];?>
 ">
@@ -79,7 +85,8 @@ function content_60dee28d4fdab1_40287778 (Smarty_Internal_Template $_smarty_tpl)
 	</div>
 
 	<div class="form-group">
-		<label class="col-2 control-label">Product picture:</label>
+		<label class="col-2 control-label"><?php echo $_smarty_tpl->tpl_vars['good']->value;?>
+ picture:</label>
 		<div class="col-10">
 			<input type="file" name="goods_pic" id="goods_pic">
 			<?php if ((isset($_smarty_tpl->tpl_vars['goods']->value['pic']))) {?>
@@ -101,7 +108,8 @@ function content_60dee28d4fdab1_40287778 (Smarty_Internal_Template $_smarty_tpl)
 			<?php }?>
 			<!--一個op的隱藏表單,是為了把東西導向正確網頁-->
 			<br>
-			<button type="submit" class="btn btn-outline-dark">Save goods</button>
+			<button type="submit" class="btn btn-outline-dark">Save <?php echo $_smarty_tpl->tpl_vars['good']->value;?>
+</button>
 		</div>
 	</div>
 </form>

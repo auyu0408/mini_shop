@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<h1>Edit goods</h1>
+<h1>Edit {$good}</h1>
 <script src="vendor/ckeditor/ckeditor.js"></script>
 <script src="vendor/ckfinder/ckfinder.js"></script>
 <form action="tool.php" method="post" class="form-horizontal" role="form" enctype="multipart/form-data">
 	<div class="form-group">
-		<label class="col-2 control-label">Song name:</label>
+		<label class="col-2 control-label">{$good} name:</label>
 		<div class="col-10">
 			<input type="text" class="form-control" name="goods_title" id="goods_title" placeholder="please enter good's name" value="{$goods.goods_title}">
 		</div>
@@ -18,35 +18,35 @@
 	</div>
 
 	<div class="form-group">
-		<label class="col-2 control-label">Lyrics:</label>
+		<label class="col-2 control-label">{$notice}:</label>
 		<div class="col-10">
 			<textarea class="form-control" name="goods_notice" id="goods_notice" placeholder="please enter sth should be notice">{$goods.goods_notice}</textarea>
 		</div>
 	</div>
 
 	<div class="form-group">
-		<label class="col-2 control-label">Video:</label>
+		<label class="col-2 control-label">{$service}:</label>
 		<div class="col-10">
 			<textarea class="form-control" name="goods_service" id="goods_service" placeholder="please enter additional service">{$goods.goods_service}</textarea>
 		</div>
 	</div>
 	
 	<div class="form-group">
-		<label class="col-2 control-label">Credit:</label>
+		<label class="col-2 control-label">{$special}:</label>
 		<div class="col-10">
 			<textarea class="form-control" name="goods_special" id="goods_special" placeholder="please enter good's special">{$goods.goods_special}</textarea>
 		</div>
 	</div>
 
 	<div class="form-group">
-		<label class="col-2 control-label">Product price:</label>
+		<label class="col-2 control-label">{$good} price:</label>
 		<div class="col-10">
 			<input type="text" class="form-control" name="goods_price" id="goods_price" placeholder="please enter good's price" value="{$goods.goods_price}">
 		</div>
 	</div>
 
 	<div class="form-group">
-		<label class="col-2 control-label">Product picture:</label>
+		<label class="col-2 control-label">{$good} picture:</label>
 		<div class="col-10">
 			<input type="file" name="goods_pic" id="goods_pic">
 			{if isset($goods.pic)}
@@ -65,7 +65,7 @@
 			{/if}
 			<!--一個op的隱藏表單,是為了把東西導向正確網頁-->
 			<br>
-			<button type="submit" class="btn btn-outline-dark">Save goods</button>
+			<button type="submit" class="btn btn-outline-dark">Save {$good}</button>
 		</div>
 	</div>
 </form>

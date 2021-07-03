@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-06-30 20:59:16
+/* Smarty version 3.1.39, created on 2021-07-03 15:05:40
   from '/usr/share/nginx/html/mini_shop/templates/display_user.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_60dc6aa43f2008_98872135',
+  'unifunc' => 'content_60e00c44a6ebe7_45029726',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'e36eab89a0a98f4e8ef57d7b7d5f94a567c0cbe8' => 
     array (
       0 => '/usr/share/nginx/html/mini_shop/templates/display_user.html',
-      1 => 1625057521,
+      1 => 1625295939,
       2 => 'file',
     ),
   ),
@@ -20,10 +20,10 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_60dc6aa43f2008_98872135 (Smarty_Internal_Template $_smarty_tpl) {
+function content_60e00c44a6ebe7_45029726 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <div class="row">
-	<?php if ($_smarty_tpl->tpl_vars['isAdmin']->value) {?>
+	<?php if ($_smarty_tpl->tpl_vars['isAdmin']->value&$_smarty_tpl->tpl_vars['mode']->value == 0) {?>
 	<div class="col-2">
 		<select size=10 class="form-control" onChange="location.href='user.php?user_sn='+this.value">
 			<?php

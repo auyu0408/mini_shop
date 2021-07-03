@@ -38,7 +38,7 @@ CREATE TABLE `bill` (
 
 LOCK TABLES `bill` WRITE;
 /*!40000 ALTER TABLE `bill` DISABLE KEYS */;
-INSERT INTO `bill` VALUES (1,2,2230,'2021-06-30 17:17:43',''),(4,2,0,'2021-06-30 17:28:50',''),(5,2,1970,'2021-06-30 19:14:12','Done'),(6,6,2390,'2021-06-30 21:03:33','undo'),(7,6,3185,'2021-06-30 21:03:59','undo'),(8,2,1428,'2021-07-01 17:35:21','Done'),(9,2,2230,'2021-07-02 17:34:24','undo');
+INSERT INTO `bill` VALUES (1,2,2230,'2021-06-30 17:17:43',''),(4,2,0,'2021-06-30 17:28:50',''),(5,2,1970,'2021-06-30 19:14:12','Done'),(8,2,1428,'2021-07-01 17:35:21','Done'),(9,2,2230,'2021-07-02 17:34:24','undo');
 /*!40000 ALTER TABLE `bill` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -64,7 +64,7 @@ CREATE TABLE `bill_detail` (
 
 LOCK TABLES `bill_detail` WRITE;
 /*!40000 ALTER TABLE `bill_detail` DISABLE KEYS */;
-INSERT INTO `bill_detail` VALUES (1,43,1,0),(1,44,1,0),(8,46,1,620),(5,43,1,730),(5,46,2,1240),(7,44,1,1500),(7,42,1,445),(7,46,2,1240),(8,47,2,808),(9,44,1,1500),(9,43,1,730);
+INSERT INTO `bill_detail` VALUES (1,43,1,0),(1,44,1,0),(8,46,1,620),(5,43,1,730),(5,46,2,1240),(8,47,2,808),(9,44,1,1500),(9,43,1,730);
 /*!40000 ALTER TABLE `bill_detail` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -129,7 +129,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (2,'Auyu','Auyu','$2y$10$JCeonTPOs6vYHLpw4X5CjuywAneXww9XXqXsVQlrGgLh.pv06i//G','datealive102164@gmail.com','F','0919091406','701','台南市','東區','大學路一號勝九舍414'),(3,'Watson Amelia','watsonameliaEN','$2y$10$Mhzkn.3mKg6MqrbheYguSew3OGH/NtUtRqIZ.15hpNdJJeTGrQoMC','gina25369@gmail.com','F','0933401290','701','台南市','東區','大學路12巷6號'),(6,'Takanashi kiara','kiaraholoen','$2y$10$wEzoXVFEAOlmlUKp/fZ2SOPykeaGdSOnGzSSlahDjrH0JoGA4yerq','datealive102164@gmail.com','F','0919091406','701','台南市','東區','大學路12巷6號'),(20,'Gawr gura','gawrguraholoen','$2y$10$/Y95qjoYNMRJcupcbn37aOkCu47t2iWQ22vsqcUGu0SkhpodQieqi','gawrgura@gmail.com.tw','F','0412345678','701','台南市','東區','大學路12巷6號');
+INSERT INTO `users` VALUES (2,'PeopleA','A','$2y$10$QriIiTetia6aOfyRnp/hJexxcagCY.PuzC8kf.vXlZC8jOKWCTaXq','peopleA@gmail.com','F','0901234567','110','台北市','信義區','信義路5段7號');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -142,4 +142,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-07-02 21:50:14
+-- Dump completed on 2021-07-03  9:46:35
