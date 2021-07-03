@@ -18,7 +18,9 @@
 				<div class="col-8">
 					<input type="hidden" name="op" value="user_login">
 					<button type="submit name" name="button" class="btn btn-secondary btn-sm">Log in</button>
+					{if $mode==0}
 					<a href="user.php?op=user_form" class="btn btn-warning btn-sm">Sign Up</a>
+					{/if}
 				</div>
 			</div>
 		</form>
