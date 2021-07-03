@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-07-03 18:59:05
-  from '/usr/share/nginx/html/mini_shop/templates/index_side.html' */
+/* Smarty version 3.1.39, created on 2021-07-03 19:08:03
+  from '/mini_shop/templates/index_side.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_60e042f94ed876_28331671',
+  'unifunc' => 'content_60e045130b6c57_37521035',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    '249b4b774d587b4b735d27f9e85875a04c957e52' => 
+    'f86b53b6cea4c3d48399963198e3b78751e49bc2' => 
     array (
-      0 => '/usr/share/nginx/html/mini_shop/templates/index_side.html',
+      0 => '/mini_shop/templates/index_side.html',
       1 => 1625309502,
       2 => 'file',
     ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:side_cart.html' => 1,
   ),
 ),false)) {
-function content_60e042f94ed876_28331671 (Smarty_Internal_Template $_smarty_tpl) {
+function content_60e045130b6c57_37521035 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div class="card text-dark bg-light">
 <?php if ($_smarty_tpl->tpl_vars['isUser']->value) {?>
 	<div class="card-header">Menu</div>
