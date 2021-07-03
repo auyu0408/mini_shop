@@ -144,7 +144,7 @@ function update_goods($goods_sn)
 	$mysqli->query($sql) or die ($mysqli->connect_error);
 	if($flag==0)
 	{
-		$sql = "update goods set goods_service='{$goods_service}'";
+		$sql = "update goods set goods_service='{$goods_service}' where goods_sn={$goods_sn}";
 		$mysqli->query($sql) or die ($mysqli->connect_error);
 	}
 	save_goods_pic($goods_sn);
