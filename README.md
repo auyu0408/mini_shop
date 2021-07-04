@@ -162,6 +162,6 @@ DB_NAME="mini_shop"
 ADMIN1="A" #change to user_id you set
 ```
 ## Materia  
-[Youtube](https://www.youtube.com)
-[Walfie](https://twitter.com/walfieee?s=21)(cover picture)
+[Youtube](https://www.youtube.com)  
+[Walfie](https://twitter.com/walfieee?s=21)(cover picture)  
 [hololive logo](https://en.hololive.tv/)(logo picture)
